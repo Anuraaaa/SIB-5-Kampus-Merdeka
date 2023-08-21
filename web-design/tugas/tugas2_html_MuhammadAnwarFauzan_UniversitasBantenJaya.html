@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 Muhammad Anwar Fauzan Universitas Banten Jaya</title>
+</head>
+<body>
+    <table align="center" border="1" width="50%" cellpadding="5" style="margin-top: 4rem;"> 
+        <thead>
+            <tr bgcolor="#808080">
+                <th>HARI</th>
+                <th>JAM</th>
+                <th>MATA KULIAH</th>
+                <th>DOSEN</th>
+                <th>RUANG</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">SENIN</td>
+                <td>08.00 - 10.00</td>
+                <td>Kajian Islam</td>
+                <td>Ust Anwar Nashihin, Lc</td>
+                <td>Ruang Teori</td>
+            </tr>
+            <tr>
+                <td>10.00 - 12.00</td>
+                <td>Aplikasi Perkantoran</td>
+                <td>Drs. MGS Hedri, M.M</td>
+                <td rowspan="5">Ruang I</td>
+            </tr>
+            <tr>
+                <td rowspan="2">SELASA</td>
+                <td>08.00 - 10.00</td>
+                <td>Linux Fundamental</td>
+                <td>Henry Saptono, S.Si, M.Kom</td>
+            </tr>
+            <tr>
+                <td>10.00 - 12.00</td>
+                <td>HTML, CSS & Javascript</td>
+                <td rowspan="3">Sirojul Munir, S.Si, M.Kom</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Rabu</td>
+                <td>08.00 - 10.00</td>
+                <td>Basis Data</td>
+            </tr>
+            <tr>
+                <td>10.00 - 12.00</td>
+                <td>Algoritma & Pemrograman</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Kamis</td>
+                <td>08.00 - 10.00</td>
+                <td>Kewirausahaan & Pengembangan Diri</td>
+                <td>Khairul Umam, S.Pd</td>
+                <td rowspan="2">Ruang Teori</td>
+            </tr>
+            <tr>
+                <td>10.00 - 12.00</td>
+                <td>Bahasa Inggris</td>
+                <td>Drs. Mahfudz</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr bgcolor="#808080">
+                <td colspan="5" align="center">JADWAL DAPAT BERUBAH SEWAKTU WAKTU</td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <br>
+
+    <table align="center" width="50%" cellpadding="10">
+        <thead>
+            <tr bgcolor="#808080">
+                <th colspan="2">Form Register Produk</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nama Produk</td>
+                <td>
+                    <input type="text" name="produk" style="width: 60%;">
+                </td>
+            </tr>
+            <tr>
+                <td>Jenis Produk</td>
+                <td>
+                    <select name="jenis" style="width: 60%; height: 20px;">
+                        <option value="">-- Kategori Produk --</option>
+                        <option value="Baju" selected>Baju</option>
+                        <option value="Celana">Celana</option>
+                        <option value="Sepatu">Sepatu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Harga</td>
+                <td>
+                    <input type="number" name="harga" style="width: 60%;">
+                </td>
+            </tr>
+            <tr>
+                <td>Stok</td>
+                <td>
+                    <input type="number" name="stok" style="width: 60%;">
+                </td>
+            </tr>
+            <tr>
+                <td>Photo</td>
+                <td>
+                    <input type="file" name="foto" accept="image/*">
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr bgcolor="#808080">
+                <th colspan="2">
+                    <input type="submit" name="kirim" value="Kirim">                
+                    &nbsp;
+                    &nbsp;
+                    <input type="reset" name="batal" value="Batal">                
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <br>
+
+    <table align="center" width="50%" cellpadding="10">
+        <thead>
+            <tr bgcolor="#808080">
+                <th colspan="2">Form Register Member</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Username</td>
+                <td>
+                    <input type="text" name="username" style="width: 60%;">
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="password" style="width: 60%;">
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr bgcolor="#808080">
+                <th colspan="2">
+                    <input type="submit" name="masuk" value="Masuk">
+                    &nbsp;
+                    &nbsp;
+                    <input type="reset" name="batal" value="Batal">
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
