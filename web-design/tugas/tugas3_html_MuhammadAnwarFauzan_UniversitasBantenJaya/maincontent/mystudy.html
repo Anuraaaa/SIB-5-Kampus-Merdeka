@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Study</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        .main {
+            background-color: #FEFEFE;
+            padding: 2rem 8rem 2rem 8rem;
+        }
+        marquee {
+            width: 15%;
+        }
+        hr {
+            width: 15%;
+            height: 5px;
+            color: #003C6C;
+            background-color: #003C6C;
+        }
+        .card img {
+            width: 90%;
+            background-color: #F2EE9D;
+            border-radius: 360px;
+        }
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 15%;            
+            background-color: #F2EE9D;
+            border-radius: 8px;
+        }
+        .card div h1 {
+            color: black;
+            font-size: medium;
+        }
+        .card div a {
+            text-decoration: none;
+            color: black;
+            font-size: medium;
+        }
+        .endtext {
+            display: block;
+            margin-left: auto;
+            margin-right: 10%;
+        }
+        .card-container {
+            margin: 2rem 0px 2rem 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <header>
+            <marquee direction="right" scrolldelay="200">
+                <h1>My Study</h1>
+            </marquee>
+            <hr>
+        </header>
+        <section>
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://i.ibb.co/HHHgYYt/book.png" alt="book"/>
+                    <div>
+                        <h1>HTML Attributes</h1>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="endtext">
+                        <a href="https://www.w3schools.com/html/html_attributes.asp" target="_blank">Mulai</a>
+                    </div>
+                    <br>
+                </div>
+                <div class="card">
+                    <img src="https://i.ibb.co/HHHgYYt/book.png" alt="book"/>
+                    <div>
+                        <h1>CSS Attributes</h1>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="endtext">
+                        <a href="https://www.w3schools.com/css/css_background.asp" target="_blank">Mulai</a>
+                    </div>
+                    <br>
+                </div>
+                <div class="card">
+                    <img src="https://i.ibb.co/HHHgYYt/book.png" alt="book"/>
+                    <div>
+                        <h1>PHP Syntax</h1>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="endtext">
+                        <a href="https://www.w3schools.com/php/php_syntax.asp" target="_blank">Mulai</a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
