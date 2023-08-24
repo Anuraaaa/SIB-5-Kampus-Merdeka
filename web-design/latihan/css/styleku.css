@@ -1,0 +1,76 @@
+h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    background-image: url('../images/Dasar\ Pemrograman.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 1cm 2cm 1cm 4cm;
+    /* background-color: darkgreen;
+    margin: 0px 2px; */
+}
+
+fieldset, legend {
+    border: 1px outset yellow;
+    color: darkgrey;
+    background-color: greenyellow;
+}
+
+p.p6 {
+    text-indent: 0;
+    text-align: justify;
+    color: antiquewhite;
+}
+
+ul#pemrograman {
+    list-style-type: square;
+}
+
+ul#office {
+    list-style-type: disc;
+}
+
+ol.python {
+    list-style-image: url('../images/jempol.gif');
+}
+
+.kursus {
+    list-style-type: lower-alpha;
+
+}
+
+#menu {
+    text-align: center;
+}
+
+/* pseudo class, bisa make class selector atau tag html selector langsung */
+
+a:link, a:visited {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+/* a:hover {
+
+} */
+
+/* a:active {
+
+} */
+
+/* pseudo element, bisa pake class selector atau tag html selector langsung */
+
+/* .p5::first-letter {
+
+} */
+
+/* .p5::first-line {
+
+} */
