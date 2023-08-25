@@ -5,6 +5,7 @@ h1{
 	word-spacing:4px;
 	font-family:Goudy Stout,cambria,verdana,tahoma,calibri;
 	color:#252B48;
+	text-shadow: 2px 2px 5px gold;
 }
 body{
 	background-image:url('../images/bootcamp_css.png');
@@ -20,10 +21,18 @@ body{
 	margin:1cm 2cm 1cm 5cm; /*searah jarum jam mulai dari atas */
 }
 legend, fieldset{
-	border:5px outset #F7E987;
+	border:10px outset #F7E987;
+	border-radius:30px;
 	color:#435334;
 	background-color:#CEDEBD;
 	padding:10px;
+	background-image: linear-gradient(to right, #C8E4B2, #9ED2BE, #7EAA92, #FFD9B7);
+}
+p, li, h3{
+	text-align: justify; 
+	color:#F7E987;
+	line-height:25px;
+	font-size:14pt;
 }
 p.p6{
 	color:#435334;
@@ -60,15 +69,18 @@ a:hover{
 	color:red;
 	border:2px dashed black;
 	background-color:greenyellow;
-	padding:5px;
 }
-a:active{
-	font-weight:bold;
+a.link_gambar:link, a.link_gambar:visited{
 	text-decoration:none;
-	color:yellow;
-	border:2px dotted red;
-	background-color:orange;
-	padding:5px;
+	color:none;
+	border-width:0px;
+	background-color:#5B9A8B;
+}
+a.link_gambar:hover{
+	text-decoration:none;
+	border-width:0px;
+	color:none;
+	background-color:#5B9A8B;
 }
 /*------------------pseudo element---------------------*/
 .p5::first-letter{
@@ -81,4 +93,38 @@ a:active{
 	text-indent:0;
 	color:yellow;
 	font-style:italic;
+}
+
+/*----------belajar css advance-------------*/
+@font-face {
+  font-family: myBackyard;
+  src: url('backyard.otf');
+}
+
+*{ /* universal untuk seluruh selector */
+  font-family: myBackyard;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: green;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

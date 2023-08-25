@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+	<title>Formulir</title>
+</head>
+<body bgcolor="#9ED2BE">
+<table align="center" width="50%" cellpadding="15">
+	<thead>
+		<tr bgcolor="#7EAA92">
+			<th colspan="2">FORMULIR</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr bgcolor="#7EAA92">
+			<th colspan="2">
+				<input type="submit" name="simpan" value="Simpan"/>
+				&nbsp;&nbsp;
+				<input type="reset" name="batal" value="Batal"/>
+			</th>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr>
+			<td width="25%">Nama Lengkap</td>
+			<td>
+				<input type="text" name="nama" size="60"/>
+			</td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td>
+				<input type="password" name="password" size="60"/>
+			</td>
+		</tr>
+		<tr>
+			<td>Jenis Kelamin</td>
+			<td>
+				<input type="radio" name="gender" 
+				       value="L" checked/>Laki-Laki
+				&nbsp;
+				<input type="radio" name="gender" value="P"/>Perempuan
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">Hobby</td>
+			<td>
+				<input type="checkbox" name="hb" value="Olahraga"/>Olahraga<br/>
+				<input type="checkbox" name="hb" 
+				       value="Membaca" checked/>Membaca<br/>
+				<input type="checkbox" name="hb" 
+				       value="Menulis" checked/>Menulis<br/>
+				<input type="checkbox" name="hb" value="Memasak"/>Memasak<br/>
+			</td>
+		</tr>
+		<tr>
+			<td>Pendidikan Akhir</td>
+			<td>
+				<select name="pendidikan">
+					<option value="">-- Pilih Pendidikan Akhir--</option>
+					<option value="SMA">SMA</option>
+					<option value="D3">D3</option>
+					<option value="S1" selected>S1</option>
+					<option value="S2">S2</option>
+					<option value="S3">S3</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">Alamat</td>
+			<td>
+				<textarea name="alamat" cols="50" rows="5"></textarea>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
