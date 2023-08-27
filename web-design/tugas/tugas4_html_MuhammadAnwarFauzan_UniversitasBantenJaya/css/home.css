@@ -1,0 +1,63 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.main {
+    background-color: #FEFEFE;
+    padding: 2rem 8rem 2rem 8rem;
+}
+img {
+    border-radius: 16px;
+    width: 500px;
+}
+section {
+    margin: 2rem 0px 2rem 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+}
+section div {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+fieldset {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-around;
+    border: none;
+}
+marquee {
+    width: 10%;
+}
+hr {
+    width: 10%;
+    height: 5px;
+    color: #003C6C;
+    background-color: #003C6C;
+}
+hr, h1 {
+    color: #003C6C;
+}
+ul h1 {
+    margin-bottom: 1rem;
+}
+footer {
+    text-align: justify;
+}
+.content-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+img:hover {
+    transform: scale(0.99);
+}
+.content-text legend p {
+    text-align: justify;
+}
+.content-text legend p::first-letter {
+    font-size: xx-large;
+}

@@ -1,0 +1,14 @@
+body {
+    background-color: #003C6C;
+}
+header {
+    display: flex;
+    color: white;
+    font-family: Student Art;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    justify-content: center;
+}
+@font-face {
+    font-family: Student Art;
+    src: url('../font/Student\ Art.otf');
+}

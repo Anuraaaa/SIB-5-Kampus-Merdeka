@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    background-color: #FFD9B7;
+}
+nav {
+    display: flex;
+    gap: 24px;
+    justify-content: start;
+    align-items: center;
+    margin-left: 24px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom: 2px solid black;
+}

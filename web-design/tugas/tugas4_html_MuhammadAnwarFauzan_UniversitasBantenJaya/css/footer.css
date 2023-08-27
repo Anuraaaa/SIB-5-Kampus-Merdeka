@@ -1,0 +1,10 @@
+body {
+    background-color: #FFD9B7;
+    text-align: center;
+    font-family: Student Art;
+}
+
+@font-face {
+    font-family: Student Art;
+    src: url('../font/Student\ Art.otf');
+}
