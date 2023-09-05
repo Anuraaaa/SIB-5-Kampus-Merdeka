@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Grid Bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+      .carousel-item img {
+        max-width: 100%;
+        max-height: 500px;
+        height: auto;
+      }
+      .card img {
+        max-width: 100%;
+        max-height: 250px;
+        height: auto;
+      }
+    </style>
+</head>
+<body>
+  <div class="container-fluid p-2 text-center">
+      <div class="row" id="home">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg bg-primary p-3">
+              <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#home">Tech Enthusiast</a>
+                <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon navbar-dark"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active text-white" aria-current="page" href="#profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active text-white" href="#content">Content</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active text-white" href="#footer">About</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>          
+          </div>
+      </div>
+        <div class="row">
+            <div class="col-lg-12">
+              <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="images/man-with-vr-headset-touching-holographic-screen.jpg" class="d-block w-100" alt="gambar1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/metaverse-avatar-collage-concept.jpg" class="d-block w-100" alt="gambar2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/teenager-dressed-white-t-shirt-using-virtual-reality-glasses-with-graph-charts-numbers-lines-technology-concept.jpg" class="d-block w-100" alt="gambar3">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>              
+            </div>
+        </div>
+        <div class="row mt-3 row-gap-3" id="profile">
+          <div class="col-lg-9">
+            <div class="d-flex gap-5 justify-content-evenly">
+              <div class="card" style="width: 18rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1c-EPZfO2LqPuUqrAkUK3zKS1TGRtooq6QQ&usqp=CAU" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">
+                    <strong>Bill Gates</strong>
+                    <br>
+                    Founder of Microsoft Corp
+                  </p>
+                  <p class="card-text">Patience is a key element of success.</p>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgVFRUZGBgaGhoYGhoaHBoaGBgYHBoaGhgaGhgcIS4lHB4rISEaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHhISHDQhISQ2NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0MTQ0NTE0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAPkAywMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAADAQIEBQYABwj/xABDEAACAQIEBAMGAwUGAwkAAAABAgADEQQSITEFQVFhBnGBEyKRobHwMsHRB0JSkuEUI2JyovEVNFMWJDNzdIKDo7P/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQIDBAX/xAAhEQEBAQEAAwEAAwEBAQAAAAAAAQIRAyExEjJBUWEiE//aAAwDAQACEQMRAD8A8pWFWCWFWWg8CJaKDOMAY0E8LBEQoAaNMe0YYlEixIsA606dOgHCdOE4QDokUrOgCRREiwBySVRkVZKpQhV1SBaHaR3hRDDEimNgZDEixLQCWsKsEu8KojSfOnToAy0G0IYNoAFoMwrQbRKNizpKpYQkXa6jbY/W0OnJ1EvOJPSWf/DbAupzIDqSBppcZhyB2v16EgSVQwOYgWtoSPQgEfMEdr9JP6VMqZCSNBp+cawNrnQfUzTJgUF9B+H42IBI9bayLiMEoTUXLkZexHMee3+2i7R+VH7Qka352+V/yigDTXkPmL/0kh6RAKDa4Praw+p+MH7L3dodHASIkcwP5xJfUnKZJoyKkk0YRNPaAaSXkZoUQMxpjiI0wN1okWJAJSwqmAEMsYFAjSIonGCTIMiEAjTFTgJgXb4wtVwJGGpuYWqiVRpnLm0HIX39BJKcUYDUKdbfYPKRquIOUKtwNthqPPzlvwXw21SzP7qnYcyPymdsnurzLfUQMPinu4QELUBVlFyMrW016EAjuB0k7DpVXZbnr1BFjN/wvw/RQfgH31l7S4dT2yD/AHmf/wBI2nhry5P7R7oZSAFy7HYksT33PwhXBv7ymwtY23N7T1ZOGU+SDa3yt9DGVeA0n/dGgPzFo5s74nlQwikhdiW+ug335x74JGU5T1Ou97nS3laek4jwpSYHQX+fOUmL8FsutJtjfXYagm/XaVNRNxp57V4bobcpAxOFKi9vvn+XzmsxWBqUGKuhK3Go7CzXkb2SVVygdCeuq+8PiG1/wiOf8ZWf6yY2vbaSaWpFt/zh6OEs4zGwzBT31tp6gxaeFKn5X6bWPxlSp/PYG8A0mYkEuxA5liP4b6m/SQ2lo4EYkVo0xGSdOnQCSsKsCphVjAs6JFEEkEYVjjA4mpZbdYqciLUbM3QS0o0EsMtgdNxcm+2p29BzlShHOX/BqV2DG5PIWFrfl6SLeNMzqz4XwWxD1DnO4HIAbf7cprsGn6SBh0bc89Ja4RTftOfera7PHmZi1wlPkJYU0kbCiWSdJEjW05VhSTORLw+SXxFoFtIxmtJSpEZBFw+q6rTVhZlB8x1nnXirw8aN61H8FxmUfuX0zADl9NJ6ZWp6yJUpBrqRcEWIIuCDvpzjzqyo3majxus6uwzG2UW72H4RbkO1/WWuFVamVclkpnOxsMzkWspPc6AdydACY7jHAxRqMoKgXupYkKQTztcwOGqKptcMw2y+4iaat74zMf8A2+d50T25L6QeLUiiZAQbnNUba73JyjXYdOvWymZ5poeKuoUAm7akbhQSRfQglybW5AWG/LOtLnxGvobRpjjGmBEnTp0AkLCLBiPWMDCKYixYJIN5ExvL70kvnI+Lp3F+n2YqcRKS3Im08N4a9rDnzMyeAoF3VRzno3CcMqBQPXzmW638cXCYfbnJVNLH6RtIw7Oo3YA+kw464n4a3wljQQ31kLAKp1BB8jf7MtFFhKmTtGVRHFogXSMy6Ro50ZI87RqLaLeCaBUQayvqpreWnWRKyAydReayfiJB+M628hfpvynnuLx1zZQVPK3vX6W/h8vseleIvdQmwI1uO3P5TyziFBRUJW9tdNDz+tpri+nPue0PEKSM25O5uSfXTT4yC0vcTXHs8tgvu2tqS1jvqdDttppylG02jn19BaIY4xpgCRZ06AHWEEEsIIwMsWNUxTBJLxjjSPMHUOh8oBI8OD+9v0Bt57Te0ToJgvDg/vR5Gb6gt8vqZhr66/H/ABNqYp2bIpKgfvd/O0aOH1391WJvvqSbf5mueU7Evl1ERfFApKWVC+WxJ15mw5i19OfpFxp3/RcNw7G0SGW9hvaajhfGi4s5s/3ylfwrxmaquwpABAjPezIquuZCXRmZRa9yUsuzFZG47jqblXRTTqfvKba6XBBGjDuCYWcPN789tsuIuBY7x5q2AHeU/hiqaigncSx4qpQXkyrvPhMfx2nRF3PpKb/tqjGy02bbfIt+urOB97QOINC/96wJOw3b0UAkwicLwNTQKua37wZTbya0feos4scDxwPbNlW+wzXPa/eWeb5zNVfDlJLkXv1uTb85O4Y7AFCSQLEE7gHl3isMPjuGL0nC6MAbfCeK46swc76G3w29Rt6Ce51jfX7+9Z4l4hQCo5H8ZH0I/OPDLymYusSMt9LAkDa9rbCVzwiEkXP30g2nQ5L9CMaY4xCIGSLEtEgB1hFMGseIwMsWNWLeCTTLDhmASqr5mAOWyXNrvufM2B085XmXHhqglR3ovoroXU8w9P3gQf8AKXi18Xjn6nUXhWHKVbHkPkbazd8OF8lrXtrMvVpZK7X3Ki2+oubN2uLG3K81fCCMovp+k59urxz6JU4QzscosLXtuSYDA8HQZqdREsTre6Mw5G+xI5GabCjW+xk+nY6kAnyBizeNfz/xD4BgaGGVhRVfftmuWe9thc8hqbbamUPFOHUkDBL7nKOSam6rr+ETYVqNkvt0t/SZTjDqug2H1j1q085kl4sPCLZQegmg4jTD+6xIFibjeZXwkSSxJ06TVFwXtJ5Yu5ZLE8CDvUBJYFGC9ASCAzWPvW+A6Sl4B4NqioWqoqoqZAUazOxDBWGRic2tyxAHuqLbz0HEcNsbrtva9iD2MJh6b7Zr+YF/5hv8Jpm8ZbzLesvwzEV0PsaoLAXCvpqo/CcoOgIvpyI2sdLuhSvY3tJ78OQi1td7878oT2IUfORfR2y/FXiTYel54z4gFySdLu3f4+WnxnsPGHsjnop/OeYPwOrinppSC5mDnMxsmhY6sAeh+UMX+2XllvqM0u0E4kipSZGZHUqyMyMp3VlJVgbdCCJHqTqcgUaY8xhiBJ04zoAUQgjBHqYwIsdGrHwSaZZeGAf7VRA5synyKMG+V5WGTuA4taWJpVG/CrG56XVlB9Cbxa+VWf5RsPGuFVKtMqLZkJPofv4QvD390eV43xbVFT2VRdQRUAYG4YLaxHbWJg1soPOwnNp25+tDw/Eaa9pe0LnUfH6zH4Z2B0538tJpUxBChRzGp/KR8dEvYkYnEZueg+/vzmM43VzM1jZQNe/PSX+IfXX0mO4phXqBgSyEtmDDmOQ05fpKz7p6nr01/g90yG28vKrjPdTe2p/Oeb8ExdZGVbFmBtcKcrD+LQaHqJpuHVcUMQ71AooNbIANRpz5+p37bSr8KdraU3uBbWOy26SuwwKWP7rfEdpZDUXilTrPCA9TBVnFoldxILG+pJsOR2itL8xn/E9Y+zfLqTYDrqwFh31gaHC8QlGktJwjuVUsArEoW1GY3yi5JuLHTvaA45nYWUXBdQe2pK29RNXVrinRNZwQKdKpUPX3FzadyfrDPzib6/8AX+PDuMYwVsTWqjZ6jsp2ut7KSOpABPcmVtUax+HGgEZVnW8+/QjGGPaMMQIZ04xYAQGEEGIRYwcsJBrCwSaxjNeW/Lz5R5jGEFPQON0cr00GoHtNtr+5ew5biScMmgHaZnhHEnq5Uex9mDlPM5rXv/KNZp6D2+E5dzl47fHZfcEBsRNThKaMgubHqN/KUAQGWeFfILNYWFz3NpM9+mveezsZhgXK3vYD9BI7cOBIAtvrfXSUGP8AEqK7BTncmwVdTp1ttBPjcfUXNTptlP8ACyDX1bMZcyee6b+hgUXIF5HXzItJxogHYXnnmG45xFEs1GozA9Fbv12tLXhvjY5gmKpPTvsWUoe+jbjyhxdzqfGxdLi0Si5tbmI7DVkYBkIIIuCNRrEq6H4ybOM/130iVXubev6QFddNYRrgnnzMHi292Z2qVtDCGoMvLOrHT+EGw+fyEq/2r8U9nhloKbGq2VuuRLO4/m9n6EiaXh9Bmp2zFQdSRodCRcd9J4j4n4ycVXZxcIvuUlJJIQEkEk6lmJLE9W7Tbx57esPPvmfyg0NoytH0No2vOlxAGMMeY0xA0zp150ALHiMtHLGDxDQQhFgkhEZCnaCJgFhwGpaoe4+hmwp1hb79ZgKFXIwbp9JrsJigwBFje0w8mffXV4deuNFgMRc2M0HFVptTy2DXGo6fqZikYqQfKaDAuWFifj1mVdE9qPG4MEe4oNuWxt0k/gmOKLkUG45GTqeDzvLZMCgNwo10vKzo5dT5VdS4y4YZ6JVT+8LEE/UaSQ9RKoKkBlbdSoIPmDpLzD4RLWKi3lJD4BLXQAEbaR3VipvUZ7CcIfDi+Hdwl7mm/vp3yE+8p9SO00OGbMMx3/OAo1GuVOjDrsfKMfFFLgyP11Ng9S2sh4xtPvf7vHe15nnrK7iuNFOk9Qn8Kkjz5D1OknnafeRkOOePQlCph6SstX3qYfQKq5irsDe5JF7eYPKearHVTc730H9fneMWdeczLg3q6val0IlcRaBi1paEZowx7RhiBDEizoAWKsaI4RgUCFSCWFUQDiIIiFMYYJDeTcNUeicjqRopyncBlDqbcrqQfWO4Lw/+0YmjQ/6lRVbsl7ufRcxmw8TYOnicViCPdOdQpFrC1OmMtum1x1vI18a+P6rcPj8yjWWGDx+1+oOvY3Ezb4KpRPvDQ7MNVP33kuk+sy/MreasbjAY8M1+cuaGNQ+7tb69p55RxDDb77yanGGU3a453bTXrD8Lnk/16NQxPvWk9MQJ54niIZdTr1Gwkql4mHI305dYcVdxtatRbAka2le7K/p89Zm8TxhiLyL/AMUc6Jf77ybgpuNHisUF0+zPPvGvH1cNQVthdzyLckHXQknyGt7zVcM4Y9ZlDknPy5Bf3mbqALn4Cef/ALQKajHYoqLD2radNFv87y/Hj+6y8vk9cjMGcJ04TZzJVCEqwVAwlWMkdoMx7RjRGQxIsSAFj1jVjgIwIohUECsKkCOaMjncDciRata+g2gbYfsupB8fn/6dGqy+ZUU7/wCsyRwlsz12v+OvVcerkflIv7Kq2XHKP46dRPU5SPmBLPDYRqVWpSYWZXqC3/yOUOnIgqR2Ikbvpp4p3SyfDZgdJV1uFLy0PIj9JosOlxEq0O0htYyTYd0Nitx1G0OjEf1l69PXz7RtLAq/PTmRDokVNMJ/ACe6gyZhKDNqEsB2tLfDcCUc736639ZcUOHWsABF2jkUGG4dmOo5+kuqWCRFvboBzJJNgoHMk2AA3JEsXpLTXM5sOQAuzHoBzMtuC8LOYV6y2YA+zTcUwdCTyNQjQnkCQN2LE7bw9WZnROG4AUUBYAO2rH+FRrlv0G5nzlxzEe1qVa3KpUqVB1s7s4+Rnvnj/inscHXa9mdfY0+uap7pI8lzH0nz7i9rTaTkclvb1W5Te0d7O27KO17n4C8KqXFhvy/SMal3gHJVVevw/rJKZGH/AIiq3Rww/wBSgj42kRad9zHeyHWA4dVpFehHUEMP5l0gWhVQd4pog84ACNkk4Xowjf7M3T5j9YAMVOxi+1tAazrQ6ODnEnkIxqrHnGARbQNwEfFtOAgF/wCDK2TF025gMR5gZj8gZ6v4m4dmNPGIDlKinUtsP4HPqcp806Tx7w81sTR7vk/nBQfMz3nwri1KGi4BVgVIOoIOhBHSFz+s8LOvzqVSYajcaR70wTbnJ2PwL4dioGYfuk/vKTpfuNj5dxGYdkY5SLMeR39Osynr07ZJqdiqq07coTBKLw2MplTY7cpHSoFN7Xt9623EVH5XtJQog2x+uVBmY6DmL9gN5Wf2p6hCKNyAFXS5O15r8Jwn2CXUBqhADP0uRcLpoO+5+FnJdX0jWpie/pnBuDG/taxzONgTfL0vbQHsNvOXtRuUq8LmV1N7htG9dvnaWROhJ2Gp9JrMzLm1q6va8j/a5xHNVp4YHSmpdv8AO+i/6frPMq4uZfeJcb7bFVql75na3kPdHobX9ZRuI6mBIkZiEs1+o/3klRtG4mnde41/WBogtOdr7RAIqLEHCcYpEQmAOUx94ynHXgEIIYppGSBbaK2kAilI4UyBeHohWbX0HWTPZac4wqyIqiHr0CNRtAk2iCbw2plrUm/hqU2+DqZ7TggUcrzDWHxtPD8LTLMqjdmVR5kgCe+1fcrPUAvkD1LdWX8A9XKD1l5/stL/ABLLVHs3BOU2zqQGBGjWuCLctd7X6SJiOCLlsrFuge2p5WZQLfDluJC4Bjfcs6nNtrcZ7DXKbanfvpLta+YbWHLr3Mm5lXnes/Kw+PqVENrsbGxVhqCNxA0Wzjv9+s1PGMGrAVNMwsr/AOIaBW7kbeVukpnCrMNT83lduN/vPZE3wjhL4gM37qswHfRfoxm6qLcEdpk/DNRRUJZgt1ygHTMSQdCeltu818rPxy+X+TM43G5E9o1wq2ba7Mbiyqu5J29ZJ8WY72OCr1AdQhy/5m0X5kQGNorUr5d1pm9uWdlBP8qn/wCw9Jlv2n49qeC9kw0esgQ/4QGcqe6lQB2I6Te++Vg8fZ7H5fCOIuLiBJjlYjWT1QiiOIiNVUDv0/WRjVY9vvruflAGvTsf6fGNOkUsef8ASMZif6CAKwGUt5AQAMLin2XpqfXb5fWBWIDrOvOWLkgAsQbMJ19J2M5RqGAcUB5awlJ3XY3HQ/rHgiN1gBmr6Xtr0kR2JNzvCsukA0AtfD1LNXpC171adupOdbAdzPovD4JCCG94FrvbZiL2Xuoub9Se0+e/Cg/7zQ/8+jfy9ql59LZF5aCVCqM+AQIFyhksAAddBtf9ZGFDIfdBZehYll8rnUdt/PYWavbn6QdamVsbaHl0j6aM9O4IKmxFj7u4lTieAA6oxXswuPIHcfOaBdogb1iuZfp53rPysJjkZEdGUkgEFd+W3cfrNN4OxDrgabVidiUvqxpkn2Y/ltbtaSMRwNalQ1HJy5QMg0BIvcltzpYaW23MktSzMCdEXYcvhIznlab8n6kjsFQ0Zm/ExLHtc3t6aD0E8z/bJiv+Wpd6rn0yIn1eerVWyqWPTQd+U8L/AGqVycYqk/hopf8AzM7vb+Vkl9ZMconOI4DTf0108/vlGMYgYwjCY9pwUDUxAPNDIBYsSbD4RKVjyjcfUsAo8z9/e0YQ2a5J6x9ODh6CRGMqwuWdkj80ZIGLESgOcdi94mH2iA1hOnDn99IggCmR6iyUv5SPV3gFp4efLVpk7CpTJ8g6mfROHxXv5G2vb5z5y4R+IeY+s9/xv4/U/WVkq1K5RoLCAxdVTpfaRjuJDqfiPnFw+rGjTLdgOcmLSA5QPDvwepkuTaOBVQNpHUXaw2EPV39IHCbmOfCqPxWpsg8z+U+f/HtfPxDEtvZwnl7NEpkfFTPeuIfjPp9BPnfxJ/zuK/8AU4j/APZ4f0aCRaDYx1SNeAMLc4wv1iNOgEiiRv01kKu92Jkw/hPl+Ur2gHJLXCUNJWUd5fYfaEFDrLaR80PiPv5SPHQ//9k=" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">
+                    <strong>Elon Musk</strong>
+                    <br>
+                    Founder of Tesla Inc.
+                  </p>
+                  <p class="card-text">When something is important enough, you do it even if the odds are not in your favor</p>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">
+                    <strong>Mark Zuckerberg</strong>
+                    <br>
+                    CEO of Meta Platform Inc.
+                  </p>
+                  <p class="card-text">The biggest risk is not taking any risk.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <ul class="list-group">
+                <li class="list-group-item">Materi</li>
+                <li class="list-group-item">HTML 5</li>
+                <li class="list-group-item">CSS 3</li>
+                <li class="list-group-item">Bootstrap</li>
+                <li class="list-group-item">Javascript</li>
+              </ul>              
+            </div>
+          </div>
+        <div class="row mt-3" id="content">
+          <div class="col-lg-12">
+              <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Apa itu HTML 5?
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>
+                          HTML 5, singkatan dari HyperText Markup Language versi 5, adalah bahasa markup yang digunakan untuk membuat dan mengatur konten web. HTML 5 adalah evolusi dari versi sebelumnya, HTML 4, dan telah menjadi standar web yang paling umum digunakan                            
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Apa itu CSS 3?
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>
+                          CSS 3, atau Cascading Style Sheets versi 3, adalah bahasa stylesheet yang digunakan untuk mengatur tampilan dan presentasi elemen-elemen dalam dokumen HTML atau XML. Ini adalah perkembangan dari CSS 2.1 dan merupakan bagian penting dari desain web modern.                             
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Apa itu Bootstrap?
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>
+                          Bootstrap adalah kerangka kerja (framework) front-end sumber terbuka yang digunakan untuk membangun situs web dan aplikasi web dengan cepat dan secara efisien. Dikembangkan oleh Twitter, Bootstrap menyediakan kumpulan alat, gaya, dan komponen yang telah dirancang sebelumnya untuk membantu pengembang web dalam mengembangkan tampilan yang responsif, menarik, dan konsisten.                             
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Apa itu Javascript?
+                      </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>
+                          JavaScript adalah bahasa pemrograman yang sering digunakan dalam pengembangan web untuk memberikan interaktivitas, fungsionalitas, dan dinamika pada halaman web.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+          </div>
+        </div>
+        <div class="row mt-3" id="footer">
+            <div class="col-lg-12">
+              <div class="alert alert-primary" role="alert">
+                Design by &copy; Muhammad Anwar Fauzan
+              </div>              
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>    
+</body>
+</html>
