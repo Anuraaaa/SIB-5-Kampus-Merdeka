@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toko Online Anwar</title>
+</head>
+<body>
+    <script>
+        // Input data dari pembeli
+        const pelanggan = "Muhammad Anwar Fauzan";
+        const produkPilihan = "Kulkas";
+        let hargaSatuan;
+        let ket;
+        let jmlBeli = 3;
+
+        if (produkPilihan === "TV") {
+            hargaSatuan = 2000000; // TV => 2jt
+            ket = 'Pesanan';
+        } else if (produkPilihan === "AC") {
+            hargaSatuan = 3000000; // AC => 3jt
+            ket = 'Pesanan';
+        } else if (produkPilihan === "Kulkas") {
+            hargaSatuan = 4000000; // Kulkas => 4jt
+            ket = 'Pesanan';
+        } else {
+            ket = 'Produk tidak valid';
+        }
+
+        // Harga kotor
+        let hargaKotor = jmlBeli * hargaSatuan;
+
+        // Diskon
+        let diskon = (produkPilihan === "Kulkas" && jmlBeli >= 3) ? 0.3 * hargaKotor : ((jmlBeli > 1) ? 0.1 * hargaKotor : 0);
+
+        // PPN
+        let ppn = 0.11 * (hargaKotor - diskon);
+
+        // Harga Bayar
+        let hargaBayar = (hargaKotor - diskon) + ppn;
+
+        // Cetak hasil
+        document.write(
+          'Nama Pelanggan: ' + pelanggan +
+          '<br/>' +
+          'Produk Pilihan: ' + produkPilihan +
+          '<br/>' +
+          'Jumlah Pembelian: ' + jmlBeli +
+          '<br/>' +
+          'Harga Kotor: Rp. ' + hargaKotor.toLocaleString() +
+          '<br/>' +
+          'Diskon: Rp. '+ diskon.toLocaleString() +
+          '<br/>' +
+          'PPN: Rp. ' + ppn.toLocaleString() +
+          '<br/>' +
+          'Harga Bayar: Rp. ' + hargaBayar.toLocaleString() +
+          '<br/>' +
+          'Keterangan: ' + ket
+        );
+    </script>
+</body>
+</html>

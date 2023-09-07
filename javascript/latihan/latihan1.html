@@ -1,0 +1,23 @@
+<script>
+    //deklarasi dan inisialisasi
+    var pelanggan = "Budi Santoso";
+    let produk = 'TV';
+    const harga = 5000000;
+    let jml_beli = 3;
+    let harga_kotor = harga * jml_beli;
+    let diskon = 0.2 * harga_kotor;
+    let harga_bayar = harga_kotor - diskon;
+    /*
+    mencetak data
+    ke halaman web
+    */
+    document.write("Nama Pelanggan: " + pelanggan +
+    "<br/>Produk Pilihan: " + produk +
+    "<br/>Harga Satuan: Rp. " + harga +
+    "<br/>Jumlah Beli: " + jml_beli +
+    "<br/>Harga Kotor: Rp. " + harga_kotor +
+    "<br/>Diskon 20%: Rp. " + diskon +
+    "<br/>Harga Bayar: Rp. " + harga_bayar );
+</script>
+    
+    

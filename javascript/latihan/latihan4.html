@@ -1,0 +1,25 @@
+<script>
+
+    let pegawai = "Budi Pelanggan";
+    const jabatan = "Manager";
+
+/*
+    if (jabatan == 'Manager') gapok = 150000000;
+    else if (jabatan == 'Asisten Manager') gapok = 10000000;
+    else if (jabatan == 'Supervisor') gapok = 7500000;
+    else if (jabatan == 'Staff') gapok = 5000000;
+    else gapok = 0;
+*/
+    switch(jabatan) {
+        case 'Manager': gapok = 150000000; break;
+        case 'Asisten Manager': gapok = 10000000; break;
+        case 'Supervisor': gapok = 7500000; break;
+        case 'Staff': gapok = 5000000; break;
+        default: gapok = 5000000; break;
+    }
+    document.write(
+        "Nama Pegawai: " + pegawai + 
+        "<br/>Jabatan: " + jabatan + 
+        "<br/>Gaj: " + gapok
+    );
+</script>

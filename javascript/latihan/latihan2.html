@@ -1,0 +1,21 @@
+<script>
+
+    let pelanggan = "Budi Pelanggan";
+    const totalBelanja = 150000;
+    let ket = "";
+/*
+    if (totalBelanja > 100000) {
+        ket = "Hello" + pelanggan + ", Anda belanja sebesar Rp. " + totalBelanja + ", maka Anda dapat hadiah";
+    }
+    else {
+        ket = "Hello" + pelanggan + ", terima kasih sudah berbelanja di toko kami";
+    }
+    document.write(ket);
+
+*/
+
+    ket = (totalBelanja > 100000) ? 'Maka anda dapat hadiah' : 'Terima Kasih';
+    document.write(
+        "Hello" + pelanggan + ", Anda belanja sebesar Rp. " + totalBelanja + ket
+    );
+</script>

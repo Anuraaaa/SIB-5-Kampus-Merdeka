@@ -1,0 +1,26 @@
+<script>
+    let siswa = "Budi Pelanggan";
+    let fisik = 'Sehat';
+    let cuaca = 'Cerah';
+    const uang_jajan = 50000;
+
+    if (cuaca == 'Cerah' && fisik == 'Sehat' && uang_jajan > 5000)
+        ket = 'Berangkat ke kampus menggunakan sepeda';
+
+    else if (cuaca == 'Hujan Ringan' && fisik == 'Sehat' && uang_jajan > 5000)
+        ket = 'Berangkat ke kampus menggunakan sepeda motor';
+    
+    else if (cuaca == 'Hujan Lebat' && fisik == 'Sehat' && uang_jajan > 5000)
+        ket = 'Berangkat ke kampus sewa taksi online';
+    
+    else
+        ket = 'Tidak berangkat ke kampus';
+
+    document.write(
+        "Nama Siswa: " + siswa + 
+        "<br/>Cuaca:  " + cuaca + 
+        "<br/>Fisik: " + fisik + 
+        "<br/>Uang Jajan: " + uang_jajan + 
+        "<br/>Keterangan: " + ket
+    );
+</script>

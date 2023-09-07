@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<title>Daftar Mahasiswa</title>
+</head>
+<body bgcolor="#9ED2BE">
+<h3 align="center">DAFTAR MAHASISWA</h3>
+<table align="center" border="1" width="50%"
+       cellpadding="15" cellspacing="0">
+	<thead>
+		<tr bgcolor="#7EAA92">
+			<th>NO</th>
+			<th>NAMA</th>
+			<th>KAMAR</th>
+		</tr>
+	</thead>
+	<tbody>
+        <script>
+            for (let no = 1; no <= 100; no++) {
+                warna = (no % 2 == 0) ? '#C8E4B2' : '#E9ED2BE';
+                document.write(            
+                    '<tr bgcolor="'+warna+'">' +
+                        '<td align="center">'+ no + '</td>' +
+                        '<td>Mahasiswa No. ' + no + '</td>' +
+                        '<td>Kamar No. ' + no + '</td>' +
+                    '</tr>'
+                );            
+            }
+        </script>
+	</tbody>
+</table>
+</body>
+</html>
