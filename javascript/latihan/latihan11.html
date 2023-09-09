@@ -1,0 +1,42 @@
+<form>
+    Tanggal Lahir:<br/>
+    <select name="tgl">
+        <option value="">-- Pilih Tanggal --</option>
+        <script>
+        let tgl = 1;
+        while(tgl <= 31){
+            document.write('<option value="'+tgl+'">'+tgl+'</option>');
+            tgl++;
+        }	
+        </script>
+    </select>
+    <select name="bln">
+        <option value="">-- Pilih Bulan --</option>
+        <script>
+        let bulan = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul',
+                       'Ags','Sep','Okt','Nov','Des'];
+        
+        for(let bln in bulan){
+            document.write(`<option value="${bulan[bln]}">${bulan[bln]}</option>`);
+        }
+        /*
+        for(let bln of bulan){
+            document.write(`<option value="${bln}">${bln}</option>`);
+        }
+        */
+        </script>
+    </select>
+    <select name="thn" id="thnx">
+        <option value="">-- Pilih Tahun --</option>
+        <option value=""></option>
+        <script>
+        let thn = 2023;
+        let dataTahun;
+        while(thn >= 1950){
+            dataTahun += `<option value="${thn}">${thn}</option>`;
+            thn--;
+        }
+        document.getElementById("thnx").innerHTML = dataTahun;	
+        </script>
+    </select>
+    </form>

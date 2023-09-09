@@ -1,0 +1,85 @@
+<script>
+//array 1 dimensi (array scalar)
+let p1 = {'nip':'111', 'nama':'Budi Santoso','jabatan':'Manager','status':'Menikah','agama':'Islam'};
+let p2 = {'nip':'112', 'nama':'Siti Aminah','jabatan':'Asisten Manager','status':'Belum','agama':'Islam'};
+let p3 = {'nip':'113', 'nama':'Alissa','jabatan':'Supervisor','status':'Menikah','agama':'Kristen Protestan'};
+let p4 = {'nip':'114', 'nama':'I Putu Gede','jabatan':'Staff','status':'Belum','agama':'Hindu'};
+let p5 = {'nip':'115', 'nama':'Sri Rezeki','jabatan':'Staff','status':'Menikah','agama':'Budha'};
+
+//array > 1 dimensi / array of object / array associative
+let pegawai = [p1,p2,p3,p4,p5];
+/*
+let judul = ['NIP','NAMA','JABATAN','GAJI POKOK','TUNJAB','BPJS','TUNKEL','ZAKAT','GAJI BERSIH'];
+
+for(jdl of judul){
+	judul_kolom += `<th>${jdl}</th>`;
+}
+document.getElementById("header").innerHTML = judul_kolom;
+*/
+</script>
+<h3 align="center">DAFTAR PEGAWAI</h3>
+<table align="center" border="1" cellpadding="10" cellspacing="0">
+	<thead>
+		<tr bgcolor="#7EAA92" id="header">
+			<th>NIP</th>
+			<th>NAMA</th>
+			<th>JABATAN</th>
+			<th>STATUS</th>
+			<th>AGAMA</th>
+			<th>GAJI POKOK</th>
+			<th>TUNJAB</th>
+			<th>BPJS</th>
+			<th>TUNKEL</th>
+			<th>ZAKAT</th>
+			<th>GAJI BERSIH</th>
+		</tr>
+	</thead>
+	<tbody>
+		<script>
+
+		// Looping array of object untuk menghitung dan menampilkan data pegawai
+		for(p of pegawai)
+		{
+			// Perhitungan GAPOK
+			switch(p.jabatan){
+				case 'Manager': gapok = 15000000; break;
+				case 'Asisten Manager': gapok = 10000000; break;
+				case 'Supervisor': gapok = 7500000; break;
+				case 'Staff': gapok = 3000000; break;
+				default: gapok = 0; break;
+			}
+			//-------------cari tunjab => 20% dari gapok-----------------
+			let tunjab = 0.2 * gapok;
+			
+			//-------------cari bpjs => 5% dari gapok-----------------
+			let bpjs = 0.05 * gapok;
+			
+			//cari tukel => 10% dari gapok untuk yg sudah menikah (gunakan ternary)
+			let tunkel = p.status === 'Menikah' ? 0.1 * gapok : 0;
+			
+			//gaji kotor = gapok + tunjab + bpjs + tunkel
+			let gajiKotor = gapok + tunjab + bpjs + tunkel;
+
+			//cari zakat => 2,5% dari gaji kotor untuk yg muslim dan gaji kotor minimal 6 jt (gunakan ternary)
+			let zakat = p.agama === 'Islam' && gajiKotor >= 6000000 ? 0.025 * gajiKotor : 0;
+			
+			//cari gaji bersih => gaji kotor - zakat
+			let gajiBersih = gajiKotor - zakat;
+			
+			document.write(`<tr>
+				<td>${p.nip}</td>
+				<td>${p.nama}</td>
+				<td>${p.jabatan}</td>
+				<td>${p.status}</td>
+				<td>${p.agama}</td>
+				<td align="right">Rp. ${gapok.toLocaleString("id-ID")}</td>
+				<td align="right">Rp. ${tunjab.toLocaleString("id-ID")}</td>
+				<td align="right">Rp. ${bpjs.toLocaleString("id-ID")}</td>
+				<td align="right">Rp. ${tunkel.toLocaleString("id-ID")}</td>
+				<td align="right">Rp. ${zakat.toLocaleString("id-ID")}</td>
+				<td align="right">Rp. ${gajiBersih.toLocaleString("id-ID")}</td>
+			</tr>`);
+		}	
+		</script>
+	</tbody>
+</table>

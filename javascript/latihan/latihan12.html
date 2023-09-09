@@ -1,0 +1,70 @@
+<script>
+//array 1 dimensi (array scalar)
+let p1 = {'nip':'111', 'nama':'Budi Santoso','jabatan':'Manager','status':'Menikah','agama':'Islam'};
+let p2 = {'nip':'112', 'nama':'Siti Aminah','jabatan':'Asisten Manager','status':'Belum','agama':'Islam'};
+let p3 = {'nip':'113', 'nama':'Alissa','jabatan':'Supervisor','status':'Menikah','agama':'Kristen Protestan'};
+let p4 = {'nip':'114', 'nama':'I Putu Gede','jabatan':'Staff','status':'Belum','agama':'Hindu'};
+let p5 = {'nip':'115', 'nama':'Sri Rezeki','jabatan':'Staff','status':'Menikah','agama':'Budha'};
+
+//array > 1 dimensi / array of object / array associative
+let pegawai = [p1,p2,p3,p4,p5];
+/*
+let judul = ['NIP','NAMA','JABATAN','GAJI POKOK','TUNJAB','BPJS','TUNKEL','ZAKAT','GAJI BERSIH'];
+
+for(jdl of judul){
+	judul_kolom += `<th>${jdl}</th>`;
+}
+document.getElementById("header").innerHTML = judul_kolom;
+*/
+</script>
+<h3 align="center">DAFTAR PEGAWAI</h3>
+<table align="center" border="1" cellpadding="10" cellspacing="0">
+	<thead>
+		<tr bgcolor="#7EAA92" id="header">
+			<th>NIP</th>
+			<th>NAMA</th>
+			<th>JABATAN</th>
+			<th>STATUS</th>
+			<th>AGAMA</th>
+			<th>GAJI POKOK</th>
+			<th>TUNJAB</th>
+			<th>BPJS</th>
+			<th>TUNKEL</th>
+			<th>ZAKAT</th>
+			<th>GAJI BERSIH</th>
+		</tr>
+	</thead>
+	<tbody>
+		<script>
+		for(p of pegawai){
+			//-------------cari gapok-----------------
+			switch(p.jabatan){
+				case 'Manager': gapok = 15000000; break;
+				case 'Asisten Manager': gapok = 10000000; break;
+				case 'Supervisor': gapok = 7500000; break;
+				case 'Staff': gapok = 3000000; break;
+				default: gapok = 0; break;
+			}
+			//-------------cari tunjab => 20% dari gapok-----------------
+			
+			//-------------cari bpjs => 5% dari gapok-----------------
+			
+			//gaji kotor = gapok + tunjab + bpjs + tunkel
+			//cari tukel => 10% dari gapok untuk yg sudah menikah (gunakan ternary)
+			
+			//cari zakat => 2,5% dari gaji kotor untuk yg muslim dan gaji kotor minimal 6 jt (gunakan ternary)
+			
+			//cari gaji bersih => gaji kotor - zakat
+			
+			document.write(`<tr>
+				<td>${p.nip}</td>
+				<td>${p.nama}</td>
+				<td>${p.jabatan}</td>
+				<td>${p.status}</td>
+				<td>${p.agama}</td>
+				<td align="right">Rp. ${gapok}</td>
+			</tr>`);
+		}	
+		</script>
+	</tbody>
+</table>
