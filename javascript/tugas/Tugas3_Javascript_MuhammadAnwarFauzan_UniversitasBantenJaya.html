@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tugas 3 Muhammad Anwar Fauzan</title>
+</head>
+<body>
+    <!-- Judul tabel -->
+    <h3 id="judul_tabel"></h3>
+
+    <!-- Tabel -->
+    <table align="center" border="1" cellpadding="10" cellspacing="0" border="1">
+        <thead>
+            <tr bgcolor="greenyellow">
+                <!-- Header kolom -->
+                <script>
+                    let judul = [
+                        'No',
+                        'Nopol',
+                        'Nama Kendaraan',
+                        'KM Awal',
+                        'KM Akhir',
+                        'Biaya Ganti Oli',
+                        'Biaya Service',
+                        'Total Biaya'
+                    ];
+
+                    // Menambahkan header kolom dengan JavaScript
+                    for (jdl of judul) 
+                    {
+                        document.write(`<th>${jdl}</th>`);
+                    }
+                </script>
+            </tr>
+        </thead>
+        <tbody id="data">
+            <!-- Data perawatan akan ditambahkan melalui JavaScript di sini -->
+        </tbody>
+    </table>
+
+    <script>
+        // Data perawatan kendaraan
+        let k1 = { 'nopol': '1111', 'nama': 'Bus', 'km_awal': 3500, 'km_akhir': 5400 };
+        let k2 = { 'nopol': '1112', 'nama': 'Bus', 'km_awal': 7000, 'km_akhir': 10000 };
+        let k3 = { 'nopol': '1113', 'nama': 'Van', 'km_awal': 8908, 'km_akhir': 12342 };
+        let k4 = { 'nopol': '1114', 'nama': 'Van', 'km_awal': 125, 'km_akhir': 200 };
+        let k5 = { 'nopol': '1115', 'nama': 'Sedan', 'km_awal': 4000, 'km_akhir': 6000 };
+        let k6 = { 'nopol': '1116', 'nama': 'Sedan', 'km_awal': 123, 'km_akhir': 1234 };
+        let k7 = { 'nopol': '1117', 'nama': 'Sedan', 'km_awal': 8000, 'km_akhir': 15000 };
+
+        let perawatan = [k1, k2, k3, k4, k5, k6, k7];
+        let data_perawatan = '';
+        let no = 1;
+
+        // Loop untuk mengisi data perawatan dan menghitung biaya
+        for (prwt of perawatan) 
+        {
+            // Hitung biaya ganti oli
+            let biayaGantiOli = 0;
+            if (prwt.km_akhir - prwt.km_awal >= 1000) 
+            {
+                if (prwt.nama === 'Bus') 
+                {
+                    biayaGantiOli = 750000;
+                } 
+                else if (prwt.nama === 'Van') 
+                {
+                    biayaGantiOli = 500000;
+                } 
+                else if (prwt.nama === 'Sedan') 
+                {
+                    biayaGantiOli = 300000;
+                }
+            }
+
+            // Hitung biaya service
+            let biayaService = 0;
+            if (prwt.km_akhir - prwt.km_awal >= 2500) 
+            {
+                switch (prwt.nama) 
+                {
+                    case 'Bus':
+                        biayaService = 1500000;
+                        break;
+                    case 'Van':
+                        biayaService = 1000000;
+                        break;
+                    case 'Sedan':
+                        biayaService = 750000;
+                        break;
+                    default:
+                        biayaService = 0;
+                }
+            }
+
+            // Hitung total biaya
+            let totalBiaya = biayaGantiOli + biayaService;
+
+            // Tambahkan data perawatan ke tabel
+            warna = no % 2 == 0 ? "khaki" : "beige";
+            data_perawatan += `<tr bgcolor="${warna}">
+                <td>${no}</td>
+                <td>${prwt.nopol}</td>
+                <td>${prwt.nama}</td>
+                <td>${prwt.km_awal}</td>
+                <td>${prwt.km_akhir}</td>
+                <td>Rp. ${biayaGantiOli.toLocaleString("id-ID")}</td>
+                <td>Rp. ${biayaService.toLocaleString("id-ID")}</td>
+                <td>Rp. ${totalBiaya.toLocaleString("id-ID")}</td>
+            </tr>`;
+
+            no++;
+        }
+
+        // Tambahkan data_perawatan ke elemen dengan id "data"
+        document.getElementById("data").innerHTML = data_perawatan;
+
+        // Set judul tabel
+        document.getElementById("judul_tabel").textContent = "Daftar Perawatan Kendaraan PT. Anwar";
+        let jdl_tbl = document.getElementById("judul_tabel");
+        jdl_tbl.style.color = "maroon";
+        jdl_tbl.style.textAlign = "center";
+        jdl_tbl.style.textTransform = "uppercase";
+    </script>
+</body>
+</html>
