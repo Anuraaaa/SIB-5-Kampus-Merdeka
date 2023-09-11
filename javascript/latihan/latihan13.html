@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Latihan DOM</title>
+	<script type="text/javascript">
+	let h3 = document.createElement("h3"); //membuat element
+	//menambahkan data pada tabel
+	h3.innerHTML = 'Data Nilai Siswa';
+	h3.style.textAlign = 'center';
+	h3.style.color = 'blue';
+	//menampilkan judul di dalam body
+	document.body.appendChild(h3);
+
+	</script>
+</head>
+<body>	
+<table align="center" border="0" cellpadding="10" cellspacing="0">
+	<thead>
+		<tr bgcolor="greenyellow">
+		<script>
+			//buat daftar judul kolom
+			let judul = ['NO','NIM','NAMA','NILAI','KETERANGAN','GRADE','PREDIKAT'];
+			for(jdl of judul){
+				document.write(`<th>${jdl}</th>`);
+			}	
+		</script>	
+		</tr>
+	</thead>
+	<tbody id="data">
+		<tr>
+			<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+		</tr>
+	</tbody>
+
+</table>
+<script type="text/javascript">
+
+//array 1 dimensi (array scalar)
+let m1 = {'nim':'111', 'nama':'Budi Santoso','nilai':78};
+let m2 = {'nim':'112', 'nama':'Siti Aminah','nilai':98};
+let m3 = {'nim':'113', 'nama':'Alissa','nilai':58};
+let m4 = {'nim':'114', 'nama':'I Putu Gede','nilai':28};
+let m5 = {'nim':'115', 'nama':'Sri Rezeki','nilai':88};
+
+let mahasiswa = [m1,m2,m3,m4,m5];
+let data_nilai = '';
+let no = 1;
+for(mhs of mahasiswa){
+	//lulus/gagal
+	ket = (mhs.nilai >= 60) ? 'Lulus' : 'Gagal';
+	//if multikondisi dengan syarat > 1
+	nilai = mhs.nilai;
+	if(nilai >= 85 && nilai <= 100) grade = 'A';
+	else if(nilai >= 75 && nilai < 85 ) grade = 'B';
+	else if(nilai >= 60 && nilai < 75 ) grade = 'C';
+	else if(nilai >= 30 && nilai < 60 ) grade = 'D';
+	else if(nilai >= 0 && nilai < 30 ) grade = 'E';
+	else grade = '';
+	//predikat
+	switch(grade){
+		case 'A': predikat = 'Memuaskan'; break;
+		case 'B': predikat = 'Bagus'; break;
+		case 'C': predikat = 'Cukup'; break;
+		case 'D': predikat = 'Kurang'; break;
+		case 'E': predikat = 'Buruk'; break;
+		default: predikat = ''; break;
+	}
+	//warna-warni
+	warna = (no % 2 == 0) ? "khaki":"beige";
+	data_nilai += `<tr bgcolor="${warna}">
+			<td>${no++}</td>
+			<td>${mhs.nim}</td>
+			<td>${mhs.nama}</td>
+			<td>${mhs.nilai}</td>
+			<td>${ket}</td>
+			<td>${grade}</td>
+			<td>${predikat}</td>
+		</tr>`;
+}
+document.getElementById("data").innerHTML = data_nilai;
+</script>
+
+</body>
+</html>

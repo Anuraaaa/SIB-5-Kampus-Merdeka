@@ -8,20 +8,18 @@ let p5 = {'nip':'115', 'nama':'Sri Rezeki','jabatan':'Staff','status':'Menikah',
 
 //array > 1 dimensi / array of object / array associative
 let pegawai = [p1,p2,p3,p4,p5];
-/*
-let judul = ['NIP','NAMA','JABATAN','GAJI POKOK','TUNJAB','BPJS','TUNKEL','ZAKAT','GAJI BERSIH'];
-
-for(jdl of judul){
-	judul_kolom += `<th>${jdl}</th>`;
-}
-document.getElementById("header").innerHTML = judul_kolom;
-*/
+let judul = ['NO','NIP','NAMA','JABATAN','STATUS','AGAMA','GAJI POKOK','TUNJAB','BPJS','TUNKEL','ZAKAT','GAJI BERSIH'];
 </script>
-<h3 align="center">DAFTAR PEGAWAI</h3>
+<h3 id="judul_tabel"></h3>
 <table align="center" border="1" cellpadding="10" cellspacing="0">
 	<thead>
-		<tr bgcolor="#7EAA92" id="header">
-			<th>NO</th>
+		<tr bgcolor="#7EAA92">
+			<script type="text/javascript">
+				for(jdl of judul){
+					document.write(`<th>${jdl}</th>`);
+				}
+			</script>
+			<!--th>NO</th>
 			<th>NIP</th>
 			<th>NAMA</th>
 			<th>JABATAN</th>
@@ -32,7 +30,7 @@ document.getElementById("header").innerHTML = judul_kolom;
 			<th>BPJS</th>
 			<th>TUNKEL</th>
 			<th>ZAKAT</th>
-			<th>GAJI BERSIH</th>
+			<th>GAJI BERSIH</th-->
 		</tr>
 	</thead>
 	<tbody>
@@ -82,3 +80,11 @@ document.getElementById("header").innerHTML = judul_kolom;
 		</script>
 	</tbody>
 </table>
+
+<script type="text/javascript">
+document.getElementById("judul_tabel").innerHTML = "Data Pegawai";	
+jdl_tbl = document.getElementById("judul_tabel"); 
+jdl_tbl.style.color = "maroon";
+jdl_tbl.style.textAlign = "center";
+jdl_tbl.style.textTransform = "uppercase";
+</script>
