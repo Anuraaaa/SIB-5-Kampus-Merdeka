@@ -21,6 +21,7 @@ document.getElementById("header").innerHTML = judul_kolom;
 <table align="center" border="1" cellpadding="10" cellspacing="0">
 	<thead>
 		<tr bgcolor="#7EAA92" id="header">
+			<th>NO</th>
 			<th>NIP</th>
 			<th>NAMA</th>
 			<th>JABATAN</th>
@@ -36,6 +37,7 @@ document.getElementById("header").innerHTML = judul_kolom;
 	</thead>
 	<tbody>
 		<script>
+		let no = 1;
 		for(p of pegawai){
 			//-------------cari gapok-----------------
 			switch(p.jabatan){
@@ -46,24 +48,36 @@ document.getElementById("header").innerHTML = judul_kolom;
 				default: gapok = 0; break;
 			}
 			//-------------cari tunjab => 20% dari gapok-----------------
-			
+			tunjab = 0.2 * gapok;
 			//-------------cari bpjs => 5% dari gapok-----------------
-			
-			//gaji kotor = gapok + tunjab + bpjs + tunkel
+			bpjs = 0.05 * gapok;
 			//cari tukel => 10% dari gapok untuk yg sudah menikah (gunakan ternary)
+			tunkel = (p.status == 'Menikah') ? 0.1 * gapok : 0;
+			//gaji kotor = gapok + tunjab + bpjs + tunkel
+			gator = gapok + tunjab + bpjs + tunkel;
 			
 			//cari zakat => 2,5% dari gaji kotor untuk yg muslim dan gaji kotor minimal 6 jt (gunakan ternary)
+			zakat = (p.agama == "Islam" && gator >= 6000000) ? 0.025 * gator : 0;
+			//cari gaji bersih => 
+			gaber = gator - zakat;
+			//warna-warni
+			warna = (no % 2 == 1) ? 'beige' : 'khaki';
 			
-			//cari gaji bersih => gaji kotor - zakat
-			
-			document.write(`<tr>
+			document.write(`<tr bgcolor="${warna}">
+				<td>${no}</td>
 				<td>${p.nip}</td>
 				<td>${p.nama}</td>
 				<td>${p.jabatan}</td>
 				<td>${p.status}</td>
 				<td>${p.agama}</td>
 				<td align="right">Rp. ${gapok}</td>
+				<td align="right">Rp. ${tunjab}</td>
+				<td align="right">Rp. ${bpjs}</td>
+				<td align="right">Rp. ${tunkel}</td>
+				<td align="right">Rp. ${zakat}</td>
+				<td align="right">Rp. ${gaber}</td>
 			</tr>`);
+			no++;
 		}	
 		</script>
 	</tbody>
