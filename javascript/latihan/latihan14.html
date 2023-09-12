@@ -1,0 +1,15 @@
+<body onload="alert('Selamat pagi kawan2')">
+	<marquee onmouseover="stop()" onmouseout="start()">
+		<img src="../../web-design/latihan/images/jempol.gif" width="20%"/>
+	</marquee>
+	<input type="text" value="Isi Nama Anda!" id="nama" 
+	       onfocus="kosongin()" onblur="alert('Terima Kasih')"/>
+	<button onclick="return confirm('Anda Yakin diHapus?')">Hapus</button>
+	<button ondblclick="alert('Selamat Pagi')">Sapa Pagi</button>
+	<script type="text/javascript">
+		function kosongin(){
+			let input_nama = window.document.getElementById("nama");
+			input_nama.value = "";
+		}
+	</script>
+</body>

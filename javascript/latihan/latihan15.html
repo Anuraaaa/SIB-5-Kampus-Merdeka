@@ -1,0 +1,30 @@
+<body>
+<form id="form_kurs">
+	Harga <input type="text" name="harga" value="">
+	Jumlah Beli <input type="text" name="jumlah" value="">
+	<select name="kurs" onchange="hitung()">
+		<option value="">--Pilih Kurs--</option>
+		<option value="15428">--$USD--</option>
+		<option value="16551">--UERO--</option>
+	</select>
+	Harga Awal<input type="text" name="harga_awal" value="" disabled>
+	Harga Konversi <input type="text" name="harga_konversi" value="" disabled>
+	
+</form>
+<script type="text/javascript">
+function hitung(){
+	//tangkap request form
+	let frm = window.document.getElementById('form_kurs');
+	let hrg = frm.harga.value;
+	let jml = frm.jumlah.value;
+	let hrg_kurs = frm.kurs.value;
+
+	let total_harga_awal = hrg * jml;
+	frm.harga_awal.value = total_harga_awal;
+
+	let total_harga_konversi = (hrg * hrg_kurs) * jml;
+	frm.harga_konversi.value = total_harga_konversi;
+	
+}	
+</script>
+</body>
