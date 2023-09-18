@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="frm_calc">
+        <table  align="center" border="0" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr bgcolor="khaki">
+                    <th colspan="2">Kalkulatorku</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr bgcolor="beige">
+                    <td>Angka 1</td>
+                    <td>
+                        <input type="text" name="a1">
+                    </td>
+                </tr>
+                <tr bgcolor="beige">
+                    <td>Angka 2</td>
+                    <td>
+                        <input type="text" name="a2">
+                    </td>
+                </tr>
+                <tr bgcolor="beige">
+                    <td>Hasil</td>
+                    <td>
+                        <input type="text" name="hasil" disabled>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr bgcolor="khaki">
+                    <th colspan="2">
+                        <button name="process" value="tambah" onclick="tambah()">+</button>
+                        <button name="process" value="kurang" onclick="kurang()">-</button>
+                        <button name="process" value="kali" onclick="kali()">x</button>
+                        <button name="process" value="bagi" onclick="bagi()">/</button>
+                        <button name="process" value="pangkat" onclick="pangkat()">^</button>
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+    <script type="text/javascript" src="js/calc.js"></script>
+</body>
+</html>
