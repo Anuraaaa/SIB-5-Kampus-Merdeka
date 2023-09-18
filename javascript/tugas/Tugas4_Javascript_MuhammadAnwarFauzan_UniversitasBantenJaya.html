@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Gempa {
+
+            constructor(lokasi, skala) {
+                this.lokasi = lokasi;
+                this.skala = skala;
+            }
+
+            statusGempa() {
+                if (this.skala < 2) {
+                    document.write(`                        
+                        Peringatan Gempa!!!
+                        <br/>Tempat: ${this.lokasi}
+                        <br/>Skala: ${this.skala}
+                        <br/>Dampak: Tidak Terasa
+                        <hr>                        
+                    `)
+                }
+                if (this.skala >= 2 && this.skala < 4) {
+                    document.write(`
+                        Peringatan Gempa!!!
+                        <br/>Tempat: ${this.lokasi}
+                        <br/>Skala: ${this.skala}
+                        <br/>Dampak: Bangunan Retak-Retak
+                        <hr>
+                    `)
+                }
+                if (this.skala >= 4 && this.skala < 6) {
+                    document.write(`
+                        Peringatan Gempa!!!
+                        <br/>Tempat: ${this.lokasi}
+                        <br/>Skala: ${this.skala}
+                        <br/>Dampak: Bangunan Roboh
+                        <hr>
+                    `)
+                }
+                if (this.skala >= 6) {
+                    document.write(`
+                        Peringatan Gempa!!!
+                        <br/>Tempat: ${this.lokasi}
+                        <br/>Skala: ${this.skala}
+                        <br/>Dampak: Bangunan Roboh & Berpotensi Tsunami
+                        <hr>
+                    `)
+                }
+            }
+        }
+        
+        const gempa1Lokasi1 = new Gempa("Planet Jupiter", 1);
+        const gempa1Lokasi2 = new Gempa("Planet Saturnus", 1);
+        gempa1Lokasi1.statusGempa();
+        gempa1Lokasi2.statusGempa();
+        
+        const gempa2Lokasi1 = new Gempa("Planet Jupiter", 2);
+        const gempa2Lokasi2 = new Gempa("Planet Saturnus", 3);
+        gempa2Lokasi1.statusGempa();
+        gempa2Lokasi2.statusGempa();
+        
+        const gempa3Lokasi1 = new Gempa("Planet Jupiter", 4);
+        const gempa3Lokasi2 = new Gempa("Planet Saturnus", 5);
+        gempa3Lokasi1.statusGempa();
+        gempa3Lokasi2.statusGempa();
+        
+        const gempa4Lokasi1 = new Gempa("Planet Jupiter", 6);
+        const gempa4Lokasi2 = new Gempa("Planet Saturnus", 8);
+        gempa4Lokasi1.statusGempa();
+        gempa4Lokasi2.statusGempa();
+</script>
+</body>
+</html>
