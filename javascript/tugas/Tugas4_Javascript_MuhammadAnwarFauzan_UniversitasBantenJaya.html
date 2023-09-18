@@ -15,42 +15,26 @@
             }
 
             statusGempa() {
+                let dampak = "";
                 if (this.skala < 2) {
-                    document.write(`                        
-                        Peringatan Gempa!!!
-                        <br/>Tempat: ${this.lokasi}
-                        <br/>Skala: ${this.skala}
-                        <br/>Dampak: Tidak Terasa
-                        <hr>                        
-                    `)
+                    dampak = "Tidak Terasa";
                 }
                 if (this.skala >= 2 && this.skala < 4) {
-                    document.write(`
-                        Peringatan Gempa!!!
-                        <br/>Tempat: ${this.lokasi}
-                        <br/>Skala: ${this.skala}
-                        <br/>Dampak: Bangunan Retak-Retak
-                        <hr>
-                    `)
+                    dampak = "Bangunan Retak-Retak";
                 }
                 if (this.skala >= 4 && this.skala < 6) {
-                    document.write(`
-                        Peringatan Gempa!!!
-                        <br/>Tempat: ${this.lokasi}
-                        <br/>Skala: ${this.skala}
-                        <br/>Dampak: Bangunan Roboh
-                        <hr>
-                    `)
+                    dampak = "Bangunan Roboh";
                 }
                 if (this.skala >= 6) {
-                    document.write(`
-                        Peringatan Gempa!!!
-                        <br/>Tempat: ${this.lokasi}
-                        <br/>Skala: ${this.skala}
-                        <br/>Dampak: Bangunan Roboh & Berpotensi Tsunami
-                        <hr>
-                    `)
+                    dampak = "Bangunan Roboh & Berpotensi Tsunami";
                 }
+                document.write(`
+                    Peringatan Gempa!!!
+                    <br/>Tempat: ${this.lokasi}
+                    <br/>Skala: ${this.skala}
+                    <br/>Dampak: ${dampak}
+                    <hr>
+                `)
             }
         }
         
