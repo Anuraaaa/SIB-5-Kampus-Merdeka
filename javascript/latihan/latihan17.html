@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<title>Latihan Jquery</title>
+	<script src="js/jquery.min.js"></script>
+	<script>
+	$("document").ready(function(){
+		$("input").click(function(){
+			alert("Selamat Belajar Jquery");
+		});
+		$(".p1").css({
+		   'color' : 'blue',
+		   'font-weight' : 'bold',
+		   'text-transform' : 'uppercase'
+		});
+		$("#p2").css({
+		   'color' : 'red',
+		   'font-style' : 'italic',
+		   'letter-spacing' : '5px'
+		});
+	});
+	</script>
+</head>
+<body>
+	<p class="p1">Belajar Jquery</p>
+	<p id="p2">di Nurul Fikri Computer</p>
+	<input type="submit" value="salam"/>
+</body>
+</html>
