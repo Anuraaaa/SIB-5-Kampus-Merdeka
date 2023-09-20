@@ -3,23 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Animal Soun</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
   <h2 align="center">Hewan & Suaranya</h2>
-
-  <!-- Alert -->
-
   <div class="alert alert-primary" role="alert">
     Arahkan Mouse Anda ke Hewan yang Anda Pilih, Lalu klik Hewan tsb.
   </div>
-
-  <!-- Burung -->
-
   <div class="accordion" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header">
@@ -29,46 +21,32 @@
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-
-          <!-- Kategori Burung -->
-
           <div class="card-group ">
-            <!-- Card 1 -->
             <div class="card mx-2">
-                <img src="img/merak.jpg" class="card-img-top custom-img img-fluid" alt="Burung 1" id="gambarBurung1">
+                <img src="img/pipit.jpg" class="card-img-top custom-img img-fluid" alt="Burung 1" id="bird1">
                 <div class="card-body">
-                    <h5 class="card-title">Burung Merak</h5>
-                    <audio id="audioBurung1" src="Audio/suara-burung-merak.mp3"></audio>
+                  <h5 class="card-title">Burung Pipit</h5>
+                  <audio id="audiobird1" src="audio/suara-burung-pipit.mp3"></audio>
                 </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="card mx-2">
-                <img src="img/hantu.jpg" class="card-img-top custom-img img-fluid" alt="Burung 2" id="gambarBurung2">
+              </div>
+              <div class="card mx-2">
+                <img src="img/hantu.jpg" class="card-img-top custom-img img-fluid" alt="Burung 2" id="bird2">
                 <div class="card-body">
-                    <h5 class="card-title">Burung Hantu</h5>
-                    <audio id="audioBurung2" src="Audio/suara-burung-hantu.mp3"></audio>
+                  <h5 class="card-title">Burung Hantu</h5>
+                  <audio id="audiobird2" src="audio/suara-burung-hantu.mp3"></audio>
                 </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="card mx-2">
-                <img src="img/pipit.jpg" class="card-img-top custom-img img-fluid" alt="Burung 3" id="gambarBurung3">
+              </div>
+              <div class="card mx-2">
+                <img src="img/merak.jpg" class="card-img-top custom-img img-fluid" alt="Burung 3" id="bird3">
                 <div class="card-body">
-                    <h5 class="card-title">Burung Pipit</h5>
-                    <audio id="audioBurung3" src="Audio/suara-burung-pipit.mp3"></audio>
+                  <h5 class="card-title">Burung Merak</h5>
+                  <audio id="audiobird3" src="audio/suara-burung-merak.mp3"></audio>
                 </div>
-            </div>
-          </div>
-          
+              </div>
+          </div>          
         </div>
       </div>
     </div>
-
-    <!-- Penurup Burung -->
-
-    <!-- Hewan Buas -->
-
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -77,46 +55,32 @@
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-
-          <!-- Kategori Hewan Buas -->
-
           <div class="card-group ">
-            <!-- Card 1 -->
             <div class="card mx-2">
-                <img src="img/singa.jpg" class="card-img-top custom-img img-fluid" alt="Hewan Buas 1" id="gambarHewanBuas1">
+                <img src="img/buaya.jpg" class="card-img-top custom-img img-fluid" alt="Hewan Buas 1" id="animalbuas1">
                 <div class="card-body">
-                    <h5 class="card-title">Singa</h5>
-                    <audio id="audioHewanBuas1" src="Audio/suara-singa.mp3"></audio>
+                    <h5 class="card-title">Buaya</h5>
+                    <audio id="audioanimalbuas1" src="audio/suara-buaya.mp3"></audio>
                 </div>
             </div>
-
-            <!-- Card 2 -->
             <div class="card mx-2">
-                <img src="img/srigala.jpg" class="card-img-top custom-img img-fluid" alt="Hewan Buas 2" id="gambarHewanBuas2">
-                <div class="card-body">
-                    <h5 class="card-title">Srigala</h5>
-                    <audio id="audioHewanBuas2" src="Audio/suara-srigala.mp3"></audio>
-                </div>
+              <img src="img/harimau.jpg" class="card-img-top custom-img img-fluid" alt="Hewan Buas 2" id="animalbuas2">
+              <div class="card-body">
+                  <h5 class="card-title">Harimau</h5>
+                  <audio id="audioanimalbuas2" src="audio/suara-harimau.mp3"></audio>
+              </div>
             </div>
-
-            <!-- Card 3 -->
             <div class="card mx-2">
-                <img src="img/harimau.jpg" class="card-img-top custom-img img-fluid" alt="Hewan Buas 3" id="gambarHewanBuas3">
-                <div class="card-body">
-                    <h5 class="card-title">Harimau</h5>
-                    <audio id="audioHewanBuas3" src="Audio/suara-harimau.mp3"></audio>
-                </div>
+              <img src="img/serigala.jpg" class="card-img-top custom-img img-fluid" alt="Hewan Buas 3" id="animalbuas3">
+              <div class="card-body">
+                  <h5 class="card-title">Serigala</h5>
+                  <audio id="audioanimalbuas3" src="audio/suara-serigala.mp3"></audio>
+              </div>
             </div>
-          </div>
-          
+          </div>          
         </div>
       </div>
     </div>
-
-    <!-- Penurup Hewan Buas -->
-
-    <!-- Hewan Ternak -->
-
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -125,50 +89,35 @@
       </h2>
       <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-
-          <!-- Kategori Hewan Ternak -->
-
           <div class="card-group ">
-            <!-- Card 1 -->
             <div class="card mx-2">
-                <img src="img/bebek.jpeg" class="card-img-top custom-img img-fluid" alt="Hewan Ternak 1" id="gambarHewanTernak1">
-                <div class="card-body">
-                    <h5 class="card-title">Bebek</h5>
-                    <audio id="audioHewanTernak1" src="Audio/suara-bebek.mp3"></audio>
-                </div>
+              <img src="img/kambing.jpeg" class="card-img-top custom-img img-fluid" alt="Hewan Ternak 1" id="animalternak1">
+              <div class="card-body">
+                  <h5 class="card-title">Kambing</h5>
+                  <audio id="audioanimalternak1" src="audio/suara-kambing.mp3"></audio>
+              </div>
             </div>
-
-            <!-- Card 2 -->
             <div class="card mx-2">
-                <img src="img/sapi.jpeg" class="card-img-top custom-img img-fluid" alt="Hewan Ternak 2" id="gambarHewanTernak2">
-                <div class="card-body">
-                    <h5 class="card-title">Sapi</h5>
-                    <audio id="audioHewanTernak2" src="Audio/suara-sapi.mp3"></audio>
-                </div>
+              <img src="img/sapi.jpeg" class="card-img-top custom-img img-fluid" alt="Hewan Ternak 2" id="animalternak2">
+              <div class="card-body">
+                <h5 class="card-title">Sapi</h5>
+                <audio id="audioanimalternak2" src="audio/suara-sapi.mp3"></audio>
+              </div>
             </div>
-
-            <!-- Card 3 -->
             <div class="card mx-2">
-                <img src="img/kambing.jpeg" class="card-img-top custom-img img-fluid" alt="Hewan Ternak 3" id="gambarHewanTernak3">
-                <div class="card-body">
-                    <h5 class="card-title">Kambing</h5>
-                    <audio id="audioHewanTernak3" src="Audio/suara-kambing.mp3"></audio>
-                </div>
+              <img src="img/bebek.jpeg" class="card-img-top custom-img img-fluid" alt="Hewan Ternak 3" id="animalternak3">
+              <div class="card-body">
+                  <h5 class="card-title">Bebek</h5>
+                  <audio id="audioanimalternak3" src="audio/suara-bebek.mp3"></audio>
+              </div>
             </div>
-          </div>
-          
+          </div>          
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Penurup Hewan Ternak -->
-
-  <!-- Pack JavaScript Library -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script src="JavaScript/jQuery.js"></script>
-  <script src="JavaScript/eventHandler.js"></script>
-
-
+  <script src="js/jQuery.js"></script>
+  <script src="js/eventHandler.js"></script>
 </body>
 </html>
