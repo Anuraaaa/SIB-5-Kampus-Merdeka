@@ -1,7 +1,9 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Formulir</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Form Nilai Siswa</title>
 </head>
 <body bgcolor="#0891b2">
 	<form action="proses_form_siswa.php" method="POST">
