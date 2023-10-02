@@ -1,5 +1,5 @@
 <?php
-require_once 'bentuk2d.php';
+require_once 'Bentuk2D.php';
 
 class Persegi_Panjang extends Bentuk2D {
     public $lebar;
