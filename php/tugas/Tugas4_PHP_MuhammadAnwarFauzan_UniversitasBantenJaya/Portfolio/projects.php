@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+            <div class="col-md-9 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
                 <div class="blog-entry">
                     <a href="https://tuna-grahita-educate.vercel.app/" target="_blank" class="blog-img"><img src="images/tunagrahita.png" class="img-responsive" alt="TunaGrahita"></a>
                     <div class="desc">
@@ -44,6 +44,26 @@
                         <span><small>October 2023</small> | <small> Movies App ReactJS </small></span>
                         <h3><a href="https://movies-ir99bi5zt-anuraaaa.vercel.app/" target="_blank">Movies App</a></h3>
                         <p>a website for check the movies</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+                <div class="blog-entry">
+                    <a href="https://peserta18-fwd.sib5.nurulfikri.com/NiceAdmin/project/" target="_blank" class="blog-img"><img src="images/niceadmin.png" class="img-responsive" alt="niceadmin"></a>
+                    <div class="desc">
+                        <span><small>October 2023</small> | <small> NiceAdmin </small></span>
+                        <h3><a href="https://peserta18-fwd.sib5.nurulfikri.com/NiceAdmin/project/" target="_blank">Nice Admin</a></h3>
+                        <p>a website for Nice Admin</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+                <div class="blog-entry">
+                    <a href="https://peserta18-fwd.sib5.nurulfikri.com/LandingPage/" target="_blank" class="blog-img"><img src="images/landingpage.png" class="img-responsive" alt="landingpage"></a>
+                    <div class="desc">
+                        <span><small>October 2023</small> | <small> Landing Page </small></span>
+                        <h3><a href="https://peserta18-fwd.sib5.nurulfikri.com/LandingPage/" target="_blank">Landing Page</a></h3>
+                        <p>a website for Landing Page</p>
                     </div>
                 </div>
             </div>
