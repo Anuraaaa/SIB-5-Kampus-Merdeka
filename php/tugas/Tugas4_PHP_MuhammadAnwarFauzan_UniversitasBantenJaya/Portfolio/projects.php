@@ -27,6 +27,26 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+                <div class="blog-entry">
+                    <a href="https://todo-list-eight-psi-67.vercel.app/" target="_blank" class="blog-img"><img src="images/todolist.png" class="img-responsive" alt="todoList"></a>
+                    <div class="desc">
+                        <span><small>October 2023</small> | <small> Todo List App ReactJS </small></span>
+                        <h3><a href="https://todo-list-eight-psi-67.vercel.app/" target="_blank">Todo List App</a></h3>
+                        <p>a website for to do list</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+                <div class="blog-entry">
+                    <a href="https://movies-ir99bi5zt-anuraaaa.vercel.app/" target="_blank" class="blog-img"><img src="images/movies.png" class="img-responsive" alt="movies"></a>
+                    <div class="desc">
+                        <span><small>October 2023</small> | <small> Movies App ReactJS </small></span>
+                        <h3><a href="https://movies-ir99bi5zt-anuraaaa.vercel.app/" target="_blank">Movies App</a></h3>
+                        <p>a website for check the movies</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
