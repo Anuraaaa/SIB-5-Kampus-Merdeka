@@ -1,0 +1,86 @@
+-- QUERY DML, VIEW, JOIN TABLE
+
+USE dbrental_bus;
+
+SHOW TABLES;
+
+INSERT INTO merek (id, nama)
+VALUES
+    (1, 'Toyota'),
+    (2, 'Honda'),
+    (3, 'Nissan'),
+    (4, 'Ford'),
+    (5, 'Volkswagen');
+
+INSERT INTO kendaraan (id, nopol, idmerek, tipe, tahunrakit, seat, fasilitas, foto, status)
+VALUES
+    (1, 'ABC123', 1, 'Sedan', '2020', 5, 'AC, Leather seats', 'sedan1.jpg', 'jalan'),
+    (2, 'XYZ789', 2, 'SUV', '2019', 7, 'Spacious, 4WD', 'suv1.jpg', 'bebas'),
+    (3, 'DEF456', 3, 'Hatchback', '2021', 4, 'Compact, Fuel-efficient', 'hatch1.jpg', 'jalan'),
+    (4, 'JKL012', 4, 'Pickup', '2018', 3, 'Cargo bed, V6 engine', 'pickup1.jpg', 'jalan'),
+    (5, 'VWU345', 5, 'Minivan', '2022', 7, 'Family-friendly, DVD', 'minivan1.jpg', 'bebas');
+
+INSERT INTO sopir (id, nama, alamat, telepon, email, ktp, sim, status, foto)
+VALUES
+    (1, 'John Doe', '123 Main St, City', '555-1234', 'john@example.com', '1234567890', '0987654321', 'jalan', 'driver1.jpg'),
+    (2, 'Jane Smith', '456 Elm St, Town', '555-5678', 'jane@example.com', '9876543210', '0123456789', 'bebas', 'driver2.jpg'),
+    (3, 'David Johnson', '789 Oak St, Village', '555-9876', 'david@example.com', '5432167890', '7654321098', 'jalan', 'driver3.jpg'),
+    (4, 'Sarah Williams', '101 Pine St, Suburb', '555-3456', 'sarah@example.com', '6543210987', '1234509876', 'bebas', 'driver4.jpg'),
+    (5, 'Robert Brown', '321 Cedar St, Countryside', '555-6789', 'robert@example.com', '4321098765', '2109876543', 'jalan', 'driver5.jpg');
+
+INSERT INTO pelanggan (id, nama, alamat, telepon, email)
+VALUES
+    (1, 'Alice Johnson', '111 Park Ave, City', '555-1111', 'alice@example.com'),
+    (2, 'Bob Smith', '222 Lake Rd, Town', '555-2222', 'bob@example.com'),
+    (3, 'Carol Williams', '333 Forest St, Village', '555-3333', 'carol@example.com'),
+    (4, 'Daniel Brown', '444 River Dr, Suburb', '555-4444', 'daniel@example.com'),
+    (5, 'Emma Davis', '555 Hillside Ln, Countryside', '555-5555', 'emma@example.com');
+
+INSERT INTO transaksi (id, idpelanggan, idsopir, idkendaraan, tglmulai, tglselesai, lamasewa, tglovertime, jmlovertime, total, status)
+VALUES
+    (1, 1, 1, 1, '2023-10-01', '2023-10-10', 10, '2023-10-11', 2, 1200.00, 'selesai'),
+    (2, 2, 2, 3, '2023-10-05', '2023-10-12', 7, NULL, NULL, 980.00, 'mulai'),
+    (3, 3, 3, 2, '2023-10-08', '2023-10-14', 6, '2023-10-15', 3, 750.00, 'selesai'),
+    (4, 4, 4, 5, '2023-10-10', '2023-10-17', 7, NULL, NULL, 1050.00, 'mulai'),
+    (5, 5, 1, 4, '2023-10-12', '2023-10-16', 4, '2023-10-17', 2, 640.00, 'selesai');
+
+INSERT INTO tarif (id, idkendaraan, perhari, overtime)
+VALUES
+    (1, 1, 120.00, 15.00),
+    (2, 2, 100.00, 12.00),
+    (3, 3, 90.00, 10.00),
+    (4, 4, 80.00, 9.00),
+    (5, 5, 110.00, 14.00);
+
+
+SELECT merek.nama, kendaraan.nopol, kendaraan.tipe, kendaraan.seat, kendaraan.fasilitas, 
+tarif.perhari, transaksi.tglmulai, transaksi.tglselesai, transaksi.lamasewa, transaksi.total, sopir.nama,
+pelanggan.nama FROM merek 
+INNER JOIN kendaraan ON kendaftar_penyewaan_bus_vdaraan.idmerek = merek.id
+INNER JOIN tarif ON tarif.idkendaraan = kendaraan.id
+INNER JOIN transaksi ON kendaraan.id = transaksi.idkendaraan
+INNER JOIN sopir ON transaksi.idsopir = sopir.id
+INNER JOIN pelanggan ON transaksi.idpelanggan = pelanggan.id;
+
+CREATE VIEW daftar_penyewaan_bus_v AS
+SELECT 
+    merek.nama AS merek_nama, 
+    kendaraan.nopol, 
+    kendaraan.tipe, 
+    kendaraan.seat, 
+    kendaraan.fasilitas, 
+    tarif.perhari, 
+    transaksi.tglmulai, 
+    transaksi.tglselesai, 
+    transaksi.lamasewa, 
+    transaksi.total, 
+    sopir.nama AS sopir_nama,
+    pelanggan.nama AS pelanggan_nama
+FROM merek 
+INNER JOIN kendaraan ON kendaraan.idmerek = merek.id
+INNER JOIN tarif ON tarif.idkendaraan = kendaraan.id
+INNER JOIN transaksi ON kendaraan.id = transaksi.idkendaraan
+INNER JOIN sopir ON transaksi.idsopir = sopir.id
+INNER JOIN pelanggan ON transaksi.idpelanggan = pelanggan.id;
+
+SELECT * FROM daftar_penyewaan_bus_v;
