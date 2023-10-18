@@ -1,0 +1,281 @@
+Microsoft Windows [Version 10.0.19045.3570]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\INTEL>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 373
+Server version: 10.4.28-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> USE tokline;
+Database changed
+MariaDB [tokline]> DELIMITER $$
+MariaDB [tokline]> CREATE PROCEDURE inputSuplaiProduk(kode VARCHAR(255), tgl DATE, suplierid INT, produkid INT, jumlah INT)
+    -> BEGIN
+    -> INSERT INTO suplai_produk (kode, tgl, suplier_id, produk_id, jumlah) VALUES (kode, tgl, suplerid, produkid, jumlah);
+    -> END $$
+Query OK, 0 rows affected (0.243 sec)
+
+MariaDB [tokline]> CREATE PROCEDURE showAllSuplaiProduk()
+    -> BEGIN
+    -> SELECT * FROM suplai_produk;
+    -> END $$
+Query OK, 0 rows affected (0.243 sec)
+
+MariaDB [tokline]> CREATE PROCEDURE showSuplierById(idx INT)
+    -> BEGIN
+    -> SELECT * FROM suplai_produk WHERE id = idx;
+    -> END $$
+Query OK, 0 rows affected (0.264 sec)
+
+MariaDB [tokline]> CREATE PROCEDURE addSuplier(nama VARCHAR(45), alamat TEXT, hp VARCHAR(15), email VARCHAR(45))
+    -> BEGIN
+    -> INSERT INTO suplier (nama, alamat, hp, email) VALUES (nama, alamat, hp, email);
+    -> END $$
+Query OK, 0 rows affected (0.242 sec)
+
+MariaDB [tokline]> DELIMITER ;
+MariaDB [tokline]> CALL showAllSuplaiProduk;
+Empty set (0.000 sec)
+
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [tokline]> CALL addSuplier('erik', 'Banten', '087878990', 'erik@gmail.com');
+Query OK, 1 row affected (0.149 sec)
+
+MariaDB [tokline]> CALL addSuplier('egi', 'Banten', '0821256765', 'egi@gmail.com');
+Query OK, 1 row affected (0.018 sec)
+
+MariaDB [tokline]> DELIMITER $$
+MariaDB [tokline]> CREATE PROCEDURE showAllSuplier()
+    -> BEGIN
+    -> SELECT * FROM suplier;
+    -> END $$
+Query OK, 0 rows affected (0.243 sec)
+
+MariaDB [tokline]> DELIMITER ;
+MariaDB [tokline]> CALL showAllSuplier;
++----+-------+--------+------------+-----------------+
+| id | nama  | alamat | hp         | email           |
++----+-------+--------+------------+-----------------+
+|  1 | Anwar | Banten | 08384634   | anwar@gmail.com |
+|  2 | erik  | Banten | 087878990  | erik@gmail.com  |
+|  3 | egi   | Banten | 0821256765 | egi@gmail.com   |
++----+-------+--------+------------+-----------------+
+3 rows in set (0.000 sec)
+
+Query OK, 0 rows affected (0.011 sec)
+
+MariaDB [tokline]> DELIMITER $$
+MariaDB [tokline]> CREATE PROCEDURE showAllProduk()
+    -> BEGIN
+    -> SELECT * FROM produk;
+    -> END $$
+Query OK, 0 rows affected (0.228 sec)
+
+MariaDB [tokline]> DELIMITER ;
+MariaDB [tokline]> CALL showAllProduk;
++----+-------+--------------+---------+------+------------------+----------+
+| id | kode  | nama         | harga   | stok | foto             | jenis_id |
++----+-------+--------------+---------+------+------------------+----------+
+|  1 | tv001 | TV 32 inchi  | 5000000 |    4 | produk_tv001.jpg |        1 |
+|  3 | mj001 | Meja Belajar | 2000000 |    6 | produk_mj001.jpg |        2 |
+|  4 | mj002 | Meja Makan   | 4000000 |    3 | produk_mj002.jpg |        2 |
+|  5 | SF111 | Sofa         | 7000000 |    2 | produk_SF111.jpg |        2 |
+|  9 | KP111 | Kipas Angin  |  500000 |    0 | produk_KP111.jpg |        1 |
+| 11 | MX111 | Mixer        | 5000000 |    5 | produk_MX111.jpg |        1 |
++----+-------+--------------+---------+------+------------------+----------+
+6 rows in set (0.000 sec)
+
+Query OK, 0 rows affected (0.019 sec)
+
+MariaDB [tokline]> CALL inputSuplaiProduk('SP001', '2023-10-19', 1, 1, 10);
+Query OK, 1 row affected (0.021 sec)
+
+MariaDB [tokline]> CALL showAllSuplaiProduk;
++----+-------+------------+------------+-----------+--------+
+| id | kode  | tgl        | suplier_id | produk_id | jumlah |
++----+-------+------------+------------+-----------+--------+
+|  3 | SP001 | 2023-10-19 |          1 |         1 |     10 |
++----+-------+------------+------------+-----------+--------+
+1 row in set (0.000 sec)
+
+Query OK, 0 rows affected (0.008 sec)
+
+MariaDB [tokline]> call inputSuplaiProduk('SP002', '2023-10-20', 2, 3, 5);
+Query OK, 1 row affected (0.122 sec)
+
+MariaDB [tokline]> call inputSuplaiProduk('SP003', '2023-10-20', 3, 4, 8);
+Query OK, 1 row affected (0.168 sec)
+
+MariaDB [tokline]> CALL showAllSuplaiProduk;
++----+-------+------------+------------+-----------+--------+
+| id | kode  | tgl        | suplier_id | produk_id | jumlah |
++----+-------+------------+------------+-----------+--------+
+|  3 | SP001 | 2023-10-19 |          1 |         1 |     10 |
+|  4 | SP002 | 2023-10-20 |          2 |         3 |      5 |
+|  5 | SP003 | 2023-10-20 |          3 |         4 |      8 |
++----+-------+------------+------------+-----------+--------+
+3 rows in set (0.000 sec)
+
+Query OK, 0 rows affected (0.008 sec)
+
+
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [tokline]> CALL showSuplierById(3);
++----+-------+------------+------------+-----------+--------+
+| id | kode  | tgl        | suplier_id | produk_id | jumlah |
++----+-------+------------+------------+-----------+--------+
+|  3 | SP001 | 2023-10-19 |          1 |         1 |     10 |
++----+-------+------------+------------+-----------+--------+
+1 row in set (0.000 sec)
+
+Query OK, 0 rows affected (0.003 sec)
+
+MariaDB [tokline]> CALL showSuplierById(5);
++----+-------+------------+------------+-----------+--------+
+| id | kode  | tgl        | suplier_id | produk_id | jumlah |
++----+-------+------------+------------+-----------+--------+
+|  5 | SP003 | 2023-10-20 |          3 |         4 |      8 |
++----+-------+------------+------------+-----------+--------+
+1 row in set (0.000 sec)
+
+Query OK, 0 rows affected (0.005 sec)
+
+MariaDB [tokline]> DELIMITER $$
+MariaDB [tokline]> CREATE TRIGGER tambahi_stok
+    -> AFTER INSERT ON suplai_produk
+    -> FOR EACH ROW
+    -> BEGIN
+    -> UPDATE produk SET stok = stok + NEW.jumlah WHERE id = NEW.produk_id;
+    -> END $$
+Query OK, 0 rows affected (0.220 sec)
+
+MariaDB [tokline]> CREATE TRIGGER update_stok
+    -> AFTER UPDATE ON suplai_produk
+    -> FOR EACH ROW
+    -> BEGIN
+    -> UPDATE produk SET stok = stok - OLD.jumlah + NEW.jumlah WHERE id = NEW.produk_id;
+    -> END $$
+Query OK, 0 rows affected (0.221 sec)
+
+MariaDB [tokline]> CREATE TRIGGER normalisasi_stok
+    -> AFTER DELETE ON suplai_produk
+    -> FOR EACH ROW
+    -> BEGIN
+    -> UPDATE produk SET stok = stok - OLD.jumlah WHERE id = OLD.produk_id;
+    -> END $$
+Query OK, 0 rows affected (0.198 sec)
+
+MariaDB [tokline]> DELIMITER ;
+MariaDB [tokline]> CALL showAllSuplaiProduk;
++----+-------+------------+------------+-----------+--------+
+| id | kode  | tgl        | suplier_id | produk_id | jumlah |
++----+-------+------------+------------+-----------+--------+
+|  3 | SP001 | 2023-10-19 |          1 |         1 |     10 |
+|  4 | SP002 | 2023-10-20 |          2 |         3 |      5 |
+|  5 | SP003 | 2023-10-20 |          3 |         4 |      8 |
++----+-------+------------+------------+-----------+--------+
+3 rows in set (0.001 sec)
+
+Query OK, 0 rows affected (0.012 sec)
+
+MariaDB [tokline]> CALL showAllProduk;
++----+-------+--------------+---------+------+------------------+----------+
+| id | kode  | nama         | harga   | stok | foto             | jenis_id |
++----+-------+--------------+---------+------+------------------+----------+
+|  1 | tv001 | TV 32 inchi  | 5000000 |    4 | produk_tv001.jpg |        1 |
+|  3 | mj001 | Meja Belajar | 2000000 |    6 | produk_mj001.jpg |        2 |
+|  4 | mj002 | Meja Makan   | 4000000 |    3 | produk_mj002.jpg |        2 |
+|  5 | SF111 | Sofa         | 7000000 |    2 | produk_SF111.jpg |        2 |
+|  9 | KP111 | Kipas Angin  |  500000 |    0 | produk_KP111.jpg |        1 |
+| 11 | MX111 | Mixer        | 5000000 |    5 | produk_MX111.jpg |        1 |
++----+-------+--------------+---------+------+------------------+----------+
+6 rows in set (0.000 sec)
+
+Query OK, 0 rows affected (0.022 sec)
+
+MariaDB [tokline]> CALL showAllSuplier;
++----+-------+--------+------------+-----------------+
+| id | nama  | alamat | hp         | email           |
++----+-------+--------+------------+-----------------+
+|  1 | Anwar | Banten | 08384634   | anwar@gmail.com |
+|  2 | erik  | Banten | 087878990  | erik@gmail.com  |
+|  3 | egi   | Banten | 0821256765 | egi@gmail.com   |
++----+-------+--------+------------+-----------------+
+3 rows in set (0.000 sec)
+
+Query OK, 0 rows affected (0.010 sec)
+
+MariaDB [tokline]> CALL inputSuplaiProduk('SP004', '2023-10-22', 1, 11, 10);
+Query OK, 2 rows affected (0.124 sec)
+
+MariaDB [tokline]> CALL showAllSuplaiProduk;
++----+-------+------------+------------+-----------+--------+
+| id | kode  | tgl        | suplier_id | produk_id | jumlah |
++----+-------+------------+------------+-----------+--------+
+|  3 | SP001 | 2023-10-19 |          1 |         1 |     10 |
+|  4 | SP002 | 2023-10-20 |          2 |         3 |      5 |
+|  5 | SP003 | 2023-10-20 |          3 |         4 |      8 |
+|  6 | SP004 | 2023-10-22 |          1 |        11 |     10 |
++----+-------+------------+------------+-----------+--------+
+4 rows in set (0.000 sec)
+
+Query OK, 0 rows affected (0.013 sec)
+
+MariaDB [tokline]> CALL showAllProduk;
++----+-------+--------------+---------+------+------------------+----------+
+| id | kode  | nama         | harga   | stok | foto             | jenis_id |
++----+-------+--------------+---------+------+------------------+----------+
+|  1 | tv001 | TV 32 inchi  | 5000000 |    4 | produk_tv001.jpg |        1 |
+|  3 | mj001 | Meja Belajar | 2000000 |    6 | produk_mj001.jpg |        2 |
+|  4 | mj002 | Meja Makan   | 4000000 |    3 | produk_mj002.jpg |        2 |
+|  5 | SF111 | Sofa         | 7000000 |    2 | produk_SF111.jpg |        2 |
+|  9 | KP111 | Kipas Angin  |  500000 |    0 | produk_KP111.jpg |        1 |
+| 11 | MX111 | Mixer        | 5000000 |   15 | produk_MX111.jpg |        1 |
++----+-------+--------------+---------+------+------------------+----------+
+6 rows in set (0.000 sec)
+
+Query OK, 0 rows affected (0.024 sec)
+
+MariaDB [tokline]> CALL showAllSuplier;
++----+-------+--------+------------+-----------------+
+| id | nama  | alamat | hp         | email           |
++----+-------+--------+------------+-----------------+
+|  1 | Anwar | Banten | 08384634   | anwar@gmail.com |
+|  2 | erik  | Banten | 087878990  | erik@gmail.com  |
+|  3 | egi   | Banten | 0821256765 | egi@gmail.com   |
++----+-------+--------+------------+-----------------+
+3 rows in set (0.000 sec)
+
+Query OK, 0 rows affected (0.011 sec)
+
+MariaDB [tokline]> GRANT ALL PRIVILEGES ON *.* TO 'joko'@'localhost' IDENTIFIED BY 'passwordjoko';
+Query OK, 0 rows affected (0.140 sec)
+
+MariaDB [tokline]> GRANT ALL PRIVILEGES ON db_toko.* TO 'tini'@'localhost' IDENTIFIED BY 'passwordtini';
+Query OK, 0 rows affected (0.025 sec)
+
+MariaDB [tokline]> GRANT SELECT, INSERT, UPDATE ON db_toko.jenis TO 'deden'@'localhost' IDENTIFIED BY 'passworddeden';
+Query OK, 0 rows affected (0.125 sec)
+
+MariaDB [tokline]> GRANT SELECT, INSERT, UPDATE ON db_toko.produk TO 'deden'@'localhost' IDENTIFIED BY 'passworddeden';
+Query OK, 0 rows affected (0.023 sec)
+
+MariaDB [tokline]> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.002 sec)
+
+MariaDB [tokline]> REVOKE INSERT ON db_toko.jenis FROM 'deden'@'localhost';
+Query OK, 0 rows affected (0.141 sec)
+
+MariaDB [tokline]> REVOKE ALL PRIVILEGES ON db_toko.* FROM 'tini'@'localhost';
+Query OK, 0 rows affected (0.022 sec)
+
+MariaDB [tokline]> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [tokline]>
