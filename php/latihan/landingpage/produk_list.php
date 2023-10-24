@@ -1,6 +1,6 @@
 <?php
 //buat array scalar judul kolom
-$ar_judul = ['NO','KODE','NAMA','HARGA','STOK','KATEGORI','FOTO','ACTION'];
+$ar_judul = ['NO','NAMA','KONDISI','HARGA','STOK','KATEGORI','FOTO','ACTION'];
 //ciptakan object dari class Produk
 $obj_produk = new Produk();
 //panggil fungsionalitas terkait
@@ -26,8 +26,8 @@ $rs = $obj_produk->index();
         ?>    
 			<tr>
 				<td><?= $no ?></td>
-				<td><?= $produk['kode'] ?></td>
 				<td><?= $produk['nama'] ?></td>
+				<td><?= $produk['kondisi'] ?></td>
                 <td align="right">Rp. <?= number_format($produk['harga'],0,',','.') ?></td>
 				<td><?= $produk['stok'] ?></td>
 				<td><?= $produk['kategori'] ?></td>
@@ -44,10 +44,21 @@ $rs = $obj_produk->index();
 					<?php } ?>	
 				</td>
                 <td>
+					<form method="POST" action="produk_controller.php">
 					<a href="index.php?hal=produk_detail&id=<?= $produk['id'] ?>" 
-					   title="Detail Produk" class="btn btn-info">
+					   title="Detail Produk" class="btn btn-info btn-sm">
 						<i class="bi bi-eye"></i>
 					</a>
+					<a href="index.php?hal=produk_form&id=<?= $produk['id'] ?>" 
+					   title="Ubah Produk" class="btn btn-warning btn-sm">
+						<i class="bi bi-pencil"></i>
+					</a>
+					<button type="submit" title="Hapus Produk" class="btn btn-danger btn-sm"
+					    name="proses" value="hapus" onclick="return confirm('Anda Yakin diHapus?')">
+						<i class="bi bi-trash"></i>
+					</button>
+					<input type="hidden" name="id" value="<?= $produk['id'] ?>" /> 
+					</form>
 				</td>
 			</tr>
         <?php    

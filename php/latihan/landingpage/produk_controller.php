@@ -23,13 +23,20 @@ $data = [
 //3. eksekusi tombol
 $obj_produk = new Produk();
 switch ($tombol) {
-    case 'simpan':
-        $obj_produk->simpan($data);
-        break;
-    
-    default:
-        header('location:index.php?hal=produk_list');
-        break;
+    case 'simpan': $obj_produk->simpan($data); break;
+    case 'ubah': 
+        $data[] = $_POST['idx']; ; // tambah array ? ke-8 dari hidden field idx
+        $obj_produk->ubah($data); break;
+    case 'hapus': $obj_produk->hapus($_POST['id']); break; //$_POST['id'] dari hidden field di tombol hapus
+
+    default: header('location:index.php?hal=produk_list'); break;
 }
 //4. setelah selasai arahkan ke hal produk
 header('location:index.php?hal=produk_list');
+
+//----------proses pencarian data---------------
+$tombol_cari = $_GET['proses_cari']; // untuk keperluan eksekusi sebuah tombol di form
+print_r('###########################'.$_GET['keyword']); die();
+if(isset($tombol_cari)){
+    $obj_produk->cari($_GET['keyword']); 
+}
