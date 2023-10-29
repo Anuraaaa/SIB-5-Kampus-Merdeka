@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,6 +16,7 @@
         include_once 'koneksi.php';
         include_once 'models/Jenis.php';
         include_once 'models/Produk.php';
+        include_once 'models/Member.php';
         //potongan2 layout web
         include_once 'header.php';
         include_once 'menu.php';

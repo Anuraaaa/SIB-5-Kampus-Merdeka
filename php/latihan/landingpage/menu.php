@@ -20,22 +20,46 @@
             Master Data
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="index.php?hal=jenis_list">Jenis</a></li>
+            <?php
+            if(isset($_SESSION['MEMBER']) && $_SESSION['MEMBER']['role'] != 'staff'){
+            ?>
+              <li><a class="dropdown-item" href="index.php?hal=jenis_list">Jenis</a></li>
+            <?php }?>
             <li><a class="dropdown-item" href="index.php?hal=produk_list">Produk</a></li>
           </ul>
         </li>
+        <?php
+        if(!isset($_SESSION['MEMBER'])){ //----belum login------
+        ?>
         <li class="nav-item">
-          <a class="nav-link" href="index.php?hal=login">Login</a>
+          <a class="nav-link" href="login.php">Login</a>
         </li>
+        <?php
+        }
+        else{ //---------user sudah login dan terotentikasi---------------
+        ?>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <?= $_SESSION['MEMBER']['username'].' - '.$_SESSION['MEMBER']['role'] ?>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <?php
+            if($_SESSION['MEMBER']['role'] == 'admin'){
+            ?>
+            <li><a class="dropdown-item" href="#">Kelola User</a></li>
+            <?php } ?>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+          </ul>
+        </li>
+        <?php } ?>
       </ul>
-      <form class="d-flex" role="search" method="GET" action="produk_controller.php">
+      <form class="d-flex" role="search" method="GET">
         <input class="form-control me-2" type="text" name="keyword" placeholder="Search" aria-label="Search">
-        <!--a href="index.php?hal=produk_list&q=sofa" class="btn btn-outline-success" type="submit"
-                name="proses" value="cari">Search</a--> 
-        <button class="btn btn-outline-success" type="submit"
-                name="proses_cari" value="cari">Search</button>           
-        <!-- <input type="hidden" name="q" value="" />    -->
-      </form>
+        <button class="btn btn-outline-success" type="submit">Search</button>           
+        <input type="hidden" name="hal" value="produk_list" />   
+      </form>  
     </div>
   </div>
 </nav>

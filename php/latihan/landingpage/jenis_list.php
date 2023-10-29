@@ -6,6 +6,8 @@ $obj_jenis = new Jenis();
 //panggil fungsionalitas terkait
 $rs = $obj_jenis->index();
 //print_r($rs); die();
+//-----------hak akses--------------
+if(isset($_SESSION['MEMBER']) && $_SESSION['MEMBER']['role'] != 'staff'){
 ?>
 <h3>Daftar Jenis</h3>
 <table class="table table-striped">
@@ -33,3 +35,9 @@ $rs = $obj_jenis->index();
 		?>
 	</tbody>
 </table>
+<?php 
+}
+else {
+	include_once 'access_denied.php';
+}
+?>

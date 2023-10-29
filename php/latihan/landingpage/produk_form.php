@@ -12,6 +12,8 @@ if(!empty($id)){
 else {
     $row = []; // mode input data baru, form tetap dalam keadaan kosong
 }
+//----------hak akses----------
+if(isset($_SESSION['MEMBER'])){
 ?>
 <div class="container px-5 my-5">
     <h3>Form Produk</h3>
@@ -84,3 +86,9 @@ else {
     </form>
 </div>
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<?php
+}
+else{
+    include_once 'access_denied.php';
+}
+?>

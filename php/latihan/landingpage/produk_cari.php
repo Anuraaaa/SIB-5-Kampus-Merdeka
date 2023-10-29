@@ -3,23 +3,13 @@
 $ar_judul = ['NO','NAMA','KONDISI','HARGA','STOK','KATEGORI','FOTO','ACTION'];
 //ciptakan object dari class Produk
 $obj_produk = new Produk();
+$keyword = $_GET['keyword'];
 //panggil fungsionalitas terkait
-//----------proses pencarian-----------
-$keyword = $_GET['keyword']; // tangkap request pencarian berdasarkan keywordnya
-if(!empty($keyword)){
-	$rs = $obj_produk->cari($keyword); //jika ada pencarian
-}
-else{
-	$rs = $obj_produk->index(); //jika tidak ada pencarian
-}
+$rs = $obj_produk->cari($keyword);
 //print_r($rs); die();
 ?>
-<h3>Daftar Produk</h3>
-<?php
-if(isset($_SESSION['MEMBER'])){
-?>
+<h3>Daftar Pencarian Produk</h3>
 <a href="index.php?hal=produk_form" class="btn btn-primary">Tambah</a>
-<?php } ?>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -60,23 +50,15 @@ if(isset($_SESSION['MEMBER'])){
 					   title="Detail Produk" class="btn btn-info btn-sm">
 						<i class="bi bi-eye"></i>
 					</a>
-					<?php
-					if(isset($_SESSION['MEMBER'])){
-					?>
 					<a href="index.php?hal=produk_form&id=<?= $produk['id'] ?>" 
 					   title="Ubah Produk" class="btn btn-warning btn-sm">
 						<i class="bi bi-pencil"></i>
 					</a>
-						<?php
-						if($_SESSION['MEMBER']['role'] != 'staff'){
-						?>
-						<button type="submit" title="Hapus Produk" class="btn btn-danger btn-sm"
-							name="proses" value="hapus" onclick="return confirm('Anda Yakin diHapus?')">
-							<i class="bi bi-trash"></i>
-						</button>
-						<?php } ?>
+					<button type="submit" title="Hapus Produk" class="btn btn-danger btn-sm"
+					    name="proses" value="hapus" onclick="return confirm('Anda Yakin diHapus?')">
+						<i class="bi bi-trash"></i>
+					</button>
 					<input type="hidden" name="id" value="<?= $produk['id'] ?>" /> 
-					<?php } ?>
 					</form>
 				</td>
 			</tr>

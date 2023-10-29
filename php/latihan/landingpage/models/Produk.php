@@ -58,11 +58,12 @@ class Produk{
     public function cari($keyword){
         $sql = "SELECT produk.*, jenis.nama AS kategori
                 FROM produk INNER JOIN jenis
-                ON jenis.id = produk.idjenis WHERE produk.nama LIKE '%$keyword%' OR jenis.nama LIKE '%$keyword%' ";
-        //PDO prepare statement
-		$ps = $this->koneksi->prepare($sql);
-		$ps->execute([$keyword]);
-        $rs = $ps->fetchAll();
-		return $rs;
+                ON jenis.id = produk.idjenis 
+                WHERE produk.nama LIKE '%$keyword%' OR 
+                jenis.nama LIKE '%$keyword%' OR 
+                produk.kondisi LIKE '%$keyword%'";
+       
+        $rs = $this->koneksi->query($sql);
+        return $rs;
     }
 }

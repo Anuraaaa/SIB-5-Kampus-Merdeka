@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once 'koneksi.php';
 include_once 'models/Produk.php';
 //1. tangkap request form (dari name2 element form)
@@ -36,7 +37,9 @@ header('location:index.php?hal=produk_list');
 
 //----------proses pencarian data---------------
 $tombol_cari = $_GET['proses_cari']; // untuk keperluan eksekusi sebuah tombol di form
-print_r('###########################'.$_GET['keyword']); die();
+
 if(isset($tombol_cari)){
+    //print_r('###########################'.$_GET['keyword']); 
     $obj_produk->cari($_GET['keyword']); 
+    header('location:index.php?hal=produk_cari');
 }
