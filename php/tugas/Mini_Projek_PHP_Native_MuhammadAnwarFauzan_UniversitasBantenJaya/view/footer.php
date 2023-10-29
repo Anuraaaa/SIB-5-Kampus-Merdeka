@@ -1,4 +1,4 @@
-<section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom alert alert-primary">
+<section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom alert alert-info">
     <!-- Left -->
     <div class="me-5 d-none d-lg-block">
       <span>Design By: <b>Anwar Fauzan@2023</b> Full Stack Web Developer</span>

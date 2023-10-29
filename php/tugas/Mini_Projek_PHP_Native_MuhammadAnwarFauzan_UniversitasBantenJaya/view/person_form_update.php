@@ -5,7 +5,7 @@
 ?>
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="card">
+        <div class="card p-5 border">
             <div class="header">
                 <h2>
                     UBAH DATA PERSON
@@ -102,7 +102,7 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-success" name="proses" type="submit" value="ubah">Ubah</button>
+                    <button class="btn btn-success mt-3" name="proses" type="submit" value="ubah">Ubah</button>
                     <input type="hidden" name="idx" value="<?= $id ?>" />
                 </form>
 

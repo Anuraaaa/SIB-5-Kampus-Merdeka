@@ -3,7 +3,7 @@
 if(isset($_SESSION['role'])) {
   // Jika sudah login
 ?>
-  <div class="card text-center">
+  <div class="card text-center" style="min-height: 30vh;">
     <div class="card-header">
       Welcome
     </div>
@@ -16,7 +16,7 @@ if(isset($_SESSION['role'])) {
 } else {
   // Jika belum login
 ?>
-  <div class="card text-center">
+  <div class="card text-center" style="min-height: 30vh;">
     <div class="card-header">
       Welcome
     </div>

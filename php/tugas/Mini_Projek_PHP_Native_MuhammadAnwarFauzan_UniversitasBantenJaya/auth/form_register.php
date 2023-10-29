@@ -17,7 +17,7 @@
     </script>
 </head>
 <body>
-    <div class="container">
+    <div class="container border mt-5 p-5 rounded-5">
         <h2>Register</h2>
         <form method="post" action="process.php" onsubmit="return validateForm()">
             <input type="hidden" name="action" value="register">
@@ -37,7 +37,7 @@
                 <label for="confirm_password" class="form-label">Confirm Password</label>
                 <input type="password" name="confirm_password" id="confirm_password" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-info">Register</button>
         </form>
         <p>Sudah punya akun? <a href="form_login.php">Login</a></p>
         <p>Go To <a href="../index.php">Home Page</a></p>

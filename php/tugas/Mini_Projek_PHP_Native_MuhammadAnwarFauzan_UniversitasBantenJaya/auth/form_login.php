@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container border mt-5 p-5 rounded-5">
         <h2>Login</h2>
         <form method="post" action="process.php" onsubmit="return validateForm()">
             <input type="hidden" name="action" value="login">
@@ -17,7 +17,7 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" name="password" id="password" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-info">Login</button>
         </form>
         <p>Belum punya akun? <a href="form_register.php">Register</a></p>
         <p>Go To <a href="../index.php">Home Page</a></p>

@@ -13,8 +13,8 @@ $rs=$obj_person->index();
 //print_r($rs); die();
 ?>
 <h3>Daftar person</h3>
-<a href="index.php?hal=person_form_create" class="btn btn-primary">Tambah</a>
-<table class="table table-striped">
+<a href="index.php?hal=person_form_create" class="btn btn-info">Tambah</a>
+<table class="table table-striped p-5 border mt-3">
 	<thead>
 		<tr>
 			<?php
@@ -54,7 +54,7 @@ $rs=$obj_person->index();
 					<?php } ?>	
 				</td>
         		<td>
-					<form method="POST" action="person_controller.php">
+					<form method="POST" action="person_controller.php" class="d-flex gap-1">
 					<!-- <a href="index.php?hal=person_form_update&id=" 
 					   title="Ubah person" class="btn btn-warning btn-sm">
 						<i class="bi bi-pencil"></i>
@@ -88,7 +88,7 @@ $rs=$obj_person->index();
 //print_r($rs); die();
 ?>
 <h3>Daftar person</h3>
-<table class="table table-striped">
+<table class="table table-striped p-5 border mt-3">
 	<thead>
 		<tr>
 			<?php
